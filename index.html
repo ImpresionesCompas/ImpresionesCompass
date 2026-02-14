@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impresiones Compas</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        /* Fondo degradado blanco-azul moderno */
+        background: linear-gradient(135deg, 
+            #ffffff 0%,
+            #e8f1fb 40%,
+            #cfe2f8 70%,
+            #a9c7f0 100%
+        );
+    }
+
+    .container {
+        text-align: center;
+        padding: 40px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .logo {
+        width: 320px;
+        max-width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .descripcion {
+        font-size: 20px;
+        color: #1f3c88;
+        margin-bottom: 40px;
+        font-weight: 500;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        padding: 15px 40px;
+        border: none;
+        border-radius: 40px;
+        font-size: 16px;
+        cursor: pointer;
+        background: linear-gradient(135deg, #1f3c88, #3c78d8);
+        color: #fff;
+        box-shadow: 0 10px 25px rgba(31,60,136,0.4);
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .btn:hover {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 15px 35px rgba(31,60,136,0.5);
+        background: linear-gradient(135deg, #3c78d8, #1f3c88);
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <img src="logo.png" alt="Impresiones Compañía" class="logo">
+
+    <div class="descripcion">
+        Impresiones digitales, lonas, viniles, tarjetas y más
+    </div>
+
+    <div class="buttons">
+        <a href="trabajos.html" class="btn">TRABAJOS</a>
+        <a href="contactanos.html" class="btn">CONTÁCTANOS</a>
+    </div>
+
+</div>
+
+</body>
+</html>

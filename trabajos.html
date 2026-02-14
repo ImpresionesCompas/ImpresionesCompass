@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trabajos - Impresiones Compás</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        /* Fondo degradado blanco-azul */
+        background: linear-gradient(135deg, 
+            #ffffff 0%,
+            #e8f1fb 40%,
+            #cfe2f8 70%,
+            #a9c7f0 100%
+        );
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        padding: 40px;
+        max-width: 1000px;
+        width: 90%;
+    }
+
+    .item {
+        text-align: center;
+    }
+
+    .item img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px;
+        background: #ddd;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        transition: 0.3s;
+    }
+
+    .item img:hover {
+        transform: scale(1.03);
+    }
+
+    .caption {
+        margin-top: 12px;
+        background: #e0e0e0;
+        padding: 8px;
+        border-radius: 20px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .back {
+        margin: 30px 0 50px;
+    }
+
+    .btn {
+        padding: 15px 40px;
+        border: none;
+        border-radius: 40px;
+        font-size: 16px;
+        cursor: pointer;
+        background: linear-gradient(135deg, #1f3c88, #3c78d8);
+        color: #fff;
+        box-shadow: 0 10px 25px rgba(31,60,136,0.4);
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .btn:hover {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 15px 35px rgba(31,60,136,0.5);
+        background: linear-gradient(135deg, #3c78d8, #1f3c88);
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+        .grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 500px) {
+        .grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="grid">
+    <div class="item">
+        <img src="img1.jpg" alt="Trabajo 1">
+        <div class="caption">Trabajo 1</div>
+    </div>
+
+    <div class="item">
+        <img src="img2.jpg" alt="Trabajo 2">
+        <div class="caption">Trabajo 2</div>
+    </div>
+
+    <div class="item">
+        <img src="img3.jpg" alt="Trabajo 3">
+        <div class="caption">Trabajo 3</div>
+    </div>
+
+    <div class="item">
+        <img src="img4.jpg" alt="Trabajo 4">
+        <div class="caption">Trabajo 4</div>
+    </div>
+
+    <div class="item">
+        <img src="img5.jpg" alt="Trabajo 5">
+        <div class="caption">Trabajo 5</div>
+    </div>
+
+    <div class="item">
+        <img src="img6.jpg" alt="Trabajo 6">
+        <div class="caption">Trabajo 6</div>
+    </div>
+</div>
+
+<div class="back">
+    <a href="index.html" class="btn">⬅ REGRESAR</a>
+</div>
+
+</body>
+</html>
