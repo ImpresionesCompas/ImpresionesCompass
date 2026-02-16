@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contacto - Impresiones Compás</title>
 
-<!-- Librería de iconos -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -16,7 +15,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
 
         background: linear-gradient(135deg, 
             #ffffff 0%,
@@ -24,6 +22,39 @@
             #cfe2f8 70%,
             #a9c7f0 100%
         );
+    }
+
+    /* ===== BARRA SUPERIOR ===== */
+    .navbar {
+        width: 100%;
+        background: linear-gradient(135deg, #1f3c88, #3c78d8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        position: relative;
+    }
+
+    .navbar img {
+        height: 45px;
+        position: absolute;
+        left: 20px;
+    }
+
+    .navbar h2 {
+        color: white;
+        margin: 0;
+        letter-spacing: 2px;
+        font-size: 20px;
+    }
+
+    /* CONTENIDO */
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 60px;
     }
 
     h1 {
@@ -43,7 +74,6 @@
         width: 260px;
         padding: 15px;
         border-radius: 40px;
-        text-align: left;
         text-decoration: none;
         font-weight: bold;
         color: white;
@@ -56,60 +86,45 @@
         font-size: 16px;
     }
 
-    .social-btn i {
-        font-size: 20px;
-        width: 25px;
-        text-align: center;
-    }
-
     .social-btn:hover {
         transform: translateY(-4px);
         box-shadow: 0 12px 25px rgba(0,0,0,0.3);
     }
 
-    .facebook {
-        background: linear-gradient(135deg, #1877f2, #4b7bec);
-    }
-
-    .whatsapp {
-        background: linear-gradient(135deg, #25d366, #128c7e);
-    }
-
-    .tiktok {
-        background: linear-gradient(135deg, #000000, #444444);
-    }
-
-    .maps {
-        background: linear-gradient(135deg, #ea4335, #c5221f);
-    }
-
-    .phone {
-        background: linear-gradient(135deg, #666, #999);
-    }
+    .facebook { background: linear-gradient(135deg, #1877f2, #4b7bec); }
+    .whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); }
+    .tiktok { background: linear-gradient(135deg, #000000, #444444); }
+    .maps { background: linear-gradient(135deg, #ea4335, #c5221f); }
+    .phone { background: linear-gradient(135deg, #666, #999); }
 
     .btn {
         padding: 15px 40px;
-        border: none;
         border-radius: 40px;
         font-size: 16px;
-        cursor: pointer;
         background: linear-gradient(135deg, #1f3c88, #3c78d8);
         color: #fff;
-        box-shadow: 0 10px 25px rgba(31,60,136,0.4);
-        transition: all 0.3s ease;
         text-decoration: none;
         font-weight: bold;
         letter-spacing: 1px;
+        box-shadow: 0 10px 25px rgba(31,60,136,0.4);
+        transition: 0.3s;
     }
 
     .btn:hover {
-        transform: translateY(-4px) scale(1.03);
-        box-shadow: 0 15px 35px rgba(31,60,136,0.5);
+        transform: translateY(-4px);
     }
 </style>
 </head>
 
 <body>
+
+<!-- BARRA SUPERIOR -->
+<div class="navbar">
+    <img src="logo.png" alt="Logo">
+    <h2>IMPRESIONES COMPÁS</h2>
+</div>
+
+<div class="content">
 
 <h1>CONTACTANOS</h1>
 
@@ -139,7 +154,6 @@
        <i class="fas fa-location-dot"></i> UBICACIÓN
     </a>
 
-    
     <a class="social-btn phone" 
        href="tel:+528781280497">
        <i class="fas fa-phone"></i> LLAMAR 878-128-0497
@@ -148,6 +162,8 @@
 </div>
 
 <a href="index.html" class="btn">⬅ REGRESAR</a>
+
+</div>
 
 </body>
 </html>
