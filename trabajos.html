@@ -1,112 +1,174 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!DOCTYPE html>
-<html lang="es">
-<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trabajos - Impresiones Compás</title>
 
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        /* Fondo degradado blanco-azul */
-        background: linear-gradient(135deg, 
-            #ffffff 0%,
-            #e8f1fb 40%,
-            #cfe2f8 70%,
-            #a9c7f0 100%
-        );
-    }
+body{
+    font-family:'Segoe UI', sans-serif;
+    min-height:100vh;
+    background: linear-gradient(135deg,#eef4ff,#dbe9ff,#c6dcff);
+    display:flex;
+    flex-direction:column;
+}
 
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
-        padding: 40px;
-        max-width: 1000px;
-        width: 90%;
-    }
+/* ===== NAVBAR ===== */
+.navbar{
+    width:100%;
+    padding:15px 40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    backdrop-filter:blur(10px);
+    background:rgba(31,60,136,0.9);
+    color:white;
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+    position:sticky;
+    top:0;
+}
 
-    .item {
-        text-align: center;
-    }
+.navbar-left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
 
-    .item img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        border-radius: 12px;
-        background: #ddd;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        transition: 0.3s;
-    }
+.navbar img{
+    height:45px;
+}
 
-    .item img:hover {
-        transform: scale(1.03);
-    }
+.navbar h2{
+    font-size:20px;
+    letter-spacing:2px;
+    font-weight:600;
+}
 
-    .caption {
-        margin-top: 12px;
-        background: #e0e0e0;
-        padding: 8px;
-        border-radius: 20px;
-        font-weight: bold;
-        color: #333;
-    }
+/* ===== CONTENIDO ===== */
+.container{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:50px 20px;
+    animation:fadeIn 1s ease;
+}
 
-    .back {
-        margin: 30px 0 50px;
-    }
+h1{
+    margin-bottom:50px;
+    font-size:30px;
+    letter-spacing:3px;
+    color:#1f3c88;
+}
 
-    .btn {
-        padding: 15px 40px;
-        border: none;
-        border-radius: 40px;
-        font-size: 16px;
-        cursor: pointer;
-        background: linear-gradient(135deg, #1f3c88, #3c78d8);
-        color: #fff;
-        box-shadow: 0 10px 25px rgba(31,60,136,0.4);
-        transition: all 0.3s ease;
-        text-decoration: none;
-        display: inline-block;
-        font-weight: bold;
-        letter-spacing: 1px;
-    }
+/* ===== GRID ===== */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+    width:100%;
+    max-width:1100px;
+}
 
-    .btn:hover {
-        transform: translateY(-4px) scale(1.03);
-        box-shadow: 0 15px 35px rgba(31,60,136,0.5);
-        background: linear-gradient(135deg, #3c78d8, #1f3c88);
-    }
+.item{
+    background:white;
+    padding:15px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
 
-    /* Responsive */
-    @media (max-width: 800px) {
-        .grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
+.item:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 35px rgba(0,0,0,0.2);
+}
 
-    @media (max-width: 500px) {
-        .grid {
-            grid-template-columns: 1fr;
-        }
+.item img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.caption{
+    margin-top:15px;
+    text-align:center;
+    font-weight:600;
+    color:#1f3c88;
+    letter-spacing:1px;
+}
+
+/* BOTON */
+.back{
+    margin-top:60px;
+}
+
+.btn{
+    padding:15px 45px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    background:linear-gradient(135deg,#1f3c88,#3c78d8);
+    color:white;
+    transition:0.3s;
+    box-shadow:0 10px 25px rgba(31,60,136,0.3);
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+}
+
+/* Animación */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* Responsive */
+@media(max-width:900px){
+    .grid{
+        grid-template-columns:repeat(2,1fr);
     }
+}
+
+@media(max-width:500px){
+    .grid{
+        grid-template-columns:1fr;
+    }
+    .navbar{
+        padding:15px 20px;
+    }
+    .navbar h2{
+        font-size:16px;
+    }
+}
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="navbar-left">
+        <img src="logo.png" alt="Logo">
+        <h2>IMPRESIONES COMPÁS</h2>
+    </div>
+</div>
+
+<!-- CONTENIDO -->
+<div class="container">
+
+<h1>NUESTROS TRABAJOS</h1>
+
 <div class="grid">
+
     <div class="item">
         <img src="img1.jpg" alt="Trabajo 1">
         <div class="caption">Trabajo 1</div>
@@ -136,10 +198,13 @@
         <img src="img6.jpg" alt="Trabajo 6">
         <div class="caption">Trabajo 6</div>
     </div>
+
 </div>
 
 <div class="back">
     <a href="index.html" class="btn">⬅ REGRESAR</a>
+</div>
+
 </div>
 
 </body>
