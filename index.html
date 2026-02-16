@@ -9,7 +9,7 @@
     body {
         margin: 0;
         font-family: Arial, sans-serif;
-        height: 100vh;
+        min-height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -30,6 +30,8 @@
         background: rgba(255, 255, 255, 0.6);
         backdrop-filter: blur(10px);
         box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        max-width: 800px;
+        width: 90%;
     }
 
     .logo {
@@ -73,6 +75,34 @@
         box-shadow: 0 15px 35px rgba(31,60,136,0.5);
         background: linear-gradient(135deg, #3c78d8, #1f3c88);
     }
+
+    /* Sección Ubicación */
+    .ubicacion {
+        margin-top: 50px;
+        font-size: 16px;
+        color: #1f3c88;
+    }
+
+    .ubicacion h3 {
+        margin-bottom: 10px;
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    .ubicacion p {
+        margin: 0 0 15px 0;
+        font-weight: 500;
+    }
+
+    .mapa {
+        width: 100%;
+        max-width: 500px;
+        height: 250px;
+        border-radius: 15px;
+        border: none;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
 </style>
 </head>
 
@@ -91,9 +121,23 @@
         <a href="contactanos.html" class="btn">CONTÁCTANOS</a>
     </div>
 
+    <!-- Apartado Ubicación -->
+    <div class="ubicacion">
+        <h3>📍 UBICACIÓN</h3>
+        <p>Av. Principal #123, Colonia Centro, Tu Ciudad</p>
+
+        <iframe 
+            class="mapa"
+            src="https://www.google.com/maps?q=Av.+Principal+123,+Centro&output=embed">
+        </iframe>
+    </div>
+
 </div>
 
 </body>
+</html>
+
 
 </html>
+
 
