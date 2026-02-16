@@ -8,160 +8,193 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        background: linear-gradient(135deg, 
-            #ffffff 0%,
-            #e8f1fb 40%,
-            #cfe2f8 70%,
-            #a9c7f0 100%
-        );
+body{
+    font-family: 'Segoe UI', sans-serif;
+    min-height:100vh;
+    background: linear-gradient(135deg,#eef4ff,#dbe9ff,#c6dcff);
+    display:flex;
+    flex-direction:column;
+}
+
+/* ===== NAVBAR MODERNA ===== */
+.navbar{
+    width:100%;
+    padding:15px 40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    backdrop-filter:blur(10px);
+    background:rgba(31,60,136,0.85);
+    color:white;
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+    position:sticky;
+    top:0;
+}
+
+.navbar-left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.navbar img{
+    height:45px;
+}
+
+.navbar h2{
+    font-size:20px;
+    letter-spacing:2px;
+    font-weight:600;
+}
+
+/* ===== CONTENIDO ===== */
+.container{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:40px 20px;
+    animation:fadeIn 1s ease;
+}
+
+h1{
+    margin-bottom:40px;
+    font-size:28px;
+    letter-spacing:3px;
+    color:#1f3c88;
+}
+
+/* ===== BOTONES ===== */
+.socials{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.social-btn{
+    width:280px;
+    padding:16px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    color:white;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding-left:30px;
+    font-size:16px;
+    transition:0.3s;
+    backdrop-filter:blur(8px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.social-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.25);
+}
+
+/* Colores modernos */
+.facebook{ background:linear-gradient(135deg,#1877f2,#4b7bec);}
+.whatsapp{ background:linear-gradient(135deg,#25d366,#128c7e);}
+.tiktok{ background:linear-gradient(135deg,#111,#444);}
+.maps{ background:linear-gradient(135deg,#ea4335,#c5221f);}
+.phone{ background:linear-gradient(135deg,#3a3a3a,#6e6e6e);}
+
+/* BOTON REGRESAR */
+.back-btn{
+    margin-top:50px;
+    padding:14px 45px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    background:linear-gradient(135deg,#1f3c88,#3c78d8);
+    color:white;
+    transition:0.3s;
+    box-shadow:0 10px 25px rgba(31,60,136,0.3);
+}
+
+.back-btn:hover{
+    transform:translateY(-4px);
+}
+
+/* Animación */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* Responsive */
+@media(max-width:500px){
+    .navbar{
+        padding:15px 20px;
     }
-
-    /* ===== BARRA SUPERIOR ===== */
-    .navbar {
-        width: 100%;
-        background: linear-gradient(135deg, #1f3c88, #3c78d8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 15px 20px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        position: relative;
+    .navbar h2{
+        font-size:16px;
     }
-
-    .navbar img {
-        height: 45px;
-        position: absolute;
-        left: 20px;
+    .social-btn{
+        width:100%;
+        max-width:300px;
     }
-
-    .navbar h2 {
-        color: white;
-        margin: 0;
-        letter-spacing: 2px;
-        font-size: 20px;
-    }
-
-    /* CONTENIDO */
-    .content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 60px;
-    }
-
-    h1 {
-        margin-bottom: 40px;
-        letter-spacing: 2px;
-        color: #222;
-    }
-
-    .socials {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-        margin-bottom: 50px;
-    }
-
-    .social-btn {
-        width: 260px;
-        padding: 15px;
-        border-radius: 40px;
-        text-decoration: none;
-        font-weight: bold;
-        color: white;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        transition: 0.3s;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        padding-left: 25px;
-        font-size: 16px;
-    }
-
-    .social-btn:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 25px rgba(0,0,0,0.3);
-    }
-
-    .facebook { background: linear-gradient(135deg, #1877f2, #4b7bec); }
-    .whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); }
-    .tiktok { background: linear-gradient(135deg, #000000, #444444); }
-    .maps { background: linear-gradient(135deg, #ea4335, #c5221f); }
-    .phone { background: linear-gradient(135deg, #666, #999); }
-
-    .btn {
-        padding: 15px 40px;
-        border-radius: 40px;
-        font-size: 16px;
-        background: linear-gradient(135deg, #1f3c88, #3c78d8);
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-        letter-spacing: 1px;
-        box-shadow: 0 10px 25px rgba(31,60,136,0.4);
-        transition: 0.3s;
-    }
-
-    .btn:hover {
-        transform: translateY(-4px);
-    }
+}
 </style>
 </head>
 
 <body>
 
-<!-- BARRA SUPERIOR -->
+<!-- NAVBAR -->
 <div class="navbar">
-    <img src="logo.png" alt="Logo">
-    <h2>IMPRESIONES COMPÁS</h2>
+    <div class="navbar-left">
+        <img src="logo.png" alt="Logo">
+        <h2>IMPRESIONES COMPÁS</h2>
+    </div>
 </div>
 
-<div class="content">
+<!-- CONTENIDO -->
+<div class="container">
 
 <h1>CONTACTANOS</h1>
 
 <div class="socials">
 
-    <a class="social-btn facebook" 
-       href="https://www.facebook.com/people/Impresiones-Comp%C3%A1s/100063717573831/" 
-       target="_blank">
-       <i class="fab fa-facebook-f"></i> FACEBOOK
-    </a>
+<a class="social-btn facebook" 
+   href="https://www.facebook.com/people/Impresiones-Comp%C3%A1s/100063717573831/" 
+   target="_blank">
+   <i class="fab fa-facebook-f"></i> FACEBOOK
+</a>
 
-    <a class="social-btn whatsapp" 
-       href="https://wa.me/+5218781280497" 
-       target="_blank">
-       <i class="fab fa-whatsapp"></i> WHATSAPP
-    </a>
+<a class="social-btn whatsapp" 
+   href="https://wa.me/+5218781280497" 
+   target="_blank">
+   <i class="fab fa-whatsapp"></i> WHATSAPP
+</a>
 
-    <a class="social-btn tiktok" 
-       href="https://www.tiktok.com/@impresiones.comps8?lang=es" 
-       target="_blank">
-       <i class="fab fa-tiktok"></i> TIKTOK
-    </a>
+<a class="social-btn tiktok" 
+   href="https://www.tiktok.com/@impresiones.comps8?lang=es" 
+   target="_blank">
+   <i class="fab fa-tiktok"></i> TIKTOK
+</a>
 
-    <a class="social-btn maps" 
-       href="https://www.google.com/maps" 
-       target="_blank">
-       <i class="fas fa-location-dot"></i> UBICACIÓN
-    </a>
+<a class="social-btn maps" 
+   href="https://www.google.com/maps" 
+   target="_blank">
+   <i class="fas fa-location-dot"></i> UBICACIÓN
+</a>
 
-    <a class="social-btn phone" 
-       href="tel:+528781280497">
-       <i class="fas fa-phone"></i> LLAMAR 878-128-0497
-    </a>
+<a class="social-btn phone" 
+   href="tel:+528781280497">
+   <i class="fas fa-phone"></i> LLAMAR 878-128-0497
+</a>
 
 </div>
 
-<a href="index.html" class="btn">⬅ REGRESAR</a>
+<a href="index.html" class="back-btn">⬅ REGRESAR</a>
 
 </div>
 
