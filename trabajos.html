@@ -90,11 +90,19 @@ h1{
     box-shadow:0 20px 35px rgba(0,0,0,0.2);
 }
 
-.item img{
+.item img,
+.video-hover{
     width:100%;
     height:200px;
     object-fit:cover;
     border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.video-hover:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 35px rgba(0,0,0,0.2);
 }
 
 .caption{
@@ -175,11 +183,10 @@ h1{
     </div>
 
     <div class="item">
-       
-<video width="640" height="360" controls>
-    <source src="video1.mp4" type="video/mp4">
-    Tu navegador no soporta la reproducción de videos.
-</video>
+        <video class="video-hover" muted>
+            <source src="video1.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de videos.
+        </video>
     </div>
 
     <div class="item">
@@ -210,8 +217,17 @@ h1{
 
 </div>
 
+<script>
+document.querySelectorAll('.video-hover').forEach(video => {
+    video.addEventListener('mouseenter', () => {
+        video.play();
+    });
+    video.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0; // Reinicia al inicio
+    });
+});
+</script>
+
 </body>
 </html>
-
-
-
