@@ -71,7 +71,7 @@ h1{
 /* ===== GRID ===== */
 .grid{
     display:grid;
-    grid-template-columns:repeat(2,1fr); /* más grandes, solo 2 columnas */
+    grid-template-columns:repeat(2,1fr);
     gap:40px;
     width:100%;
     max-width:1000px;
@@ -83,7 +83,7 @@ h1{
     border-radius:20px;
     box-shadow:0 10px 25px rgba(0,0,0,0.1);
     transition:0.3s;
-    min-height:420px; /* más alto */
+    min-height:420px;
 }
 
 .item:hover{
@@ -94,9 +94,9 @@ h1{
 .item img,
 .video-hover{
     width:100%;
-    height:350px; /* más grande */
+    height:350px;
     object-fit:contain; /* muestra todo el contenido */
-    background:#f0f0f0; /* fondo neutro para las franjas */
+    background:#f0f0f0;
     border-radius:15px;
     box-shadow:0 10px 25px rgba(0,0,0,0.1);
     transition:0.3s;
@@ -144,7 +144,7 @@ h1{
 /* Responsive */
 @media(max-width:900px){
     .grid{
-        grid-template-columns:repeat(1,1fr); /* en pantallas medianas, una columna */
+        grid-template-columns:repeat(1,1fr);
     }
 }
 
@@ -185,7 +185,7 @@ h1{
     </div>
 
     <div class="item">
-        <video class="video-hover" muted controls>
+        <video class="video-hover" muted>
             <source src="video1.mp4" type="video/mp4">
             Tu navegador no soporta la reproducción de videos.
         </video>
@@ -197,7 +197,7 @@ h1{
     </div>
 
     <div class="item">
-        <video class="video-hover" muted controls>
+        <video class="video-hover" muted>
             <source src="video2.mp4" type="video/mp4">
             Tu navegador no soporta la reproducción de videos.
         </video>
@@ -227,8 +227,7 @@ document.querySelectorAll('.video-hover').forEach(video => {
         video.play();
     });
     video.addEventListener('mouseleave', () => {
-        video.pause();
-        video.currentTime = 0; // Reinicia al inicio
+        video.pause(); // se detiene suavemente, sin reiniciar ni mostrar duración
     });
 });
 </script>
