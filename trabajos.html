@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,9 +20,6 @@ box-sizing:border-box;
 body{
 font-family:'Segoe UI',sans-serif;
 background:linear-gradient(135deg,#eef4ff,#dbe9ff,#c6dcff);
-min-height:100vh;
-display:flex;
-flex-direction:column;
 }
 
 /* NAVBAR */
@@ -32,44 +29,34 @@ width:100%;
 padding:15px 40px;
 display:flex;
 align-items:center;
-background:rgba(31,60,136,0.95);
+background:#1f3c88;
 color:white;
 box-shadow:0 5px 20px rgba(0,0,0,0.2);
-border-bottom:3px solid #3c78d8;
-}
-
-.navbar-left{
-display:flex;
-align-items:center;
-gap:15px;
 }
 
 .navbar img{
 height:45px;
-}
-
-.navbar h2{
-font-size:20px;
-letter-spacing:2px;
+margin-right:10px;
 }
 
 /* CONTENIDO */
 
 .container{
-flex:1;
 padding:60px 20px;
-text-align:center;
-animation:fadeIn 1s ease;
+max-width:1200px;
+margin:auto;
 }
 
 h1{
+text-align:center;
 font-size:36px;
 letter-spacing:4px;
 color:#1f3c88;
-margin-bottom:10px;
+margin-bottom:15px;
 }
 
 .sub{
+text-align:center;
 color:#555;
 margin-bottom:50px;
 }
@@ -77,9 +64,15 @@ margin-bottom:50px;
 /* SECCIONES */
 
 .section{
-max-width:1100px;
-margin:60px auto;
-text-align:left;
+margin-bottom:70px;
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.section.show{
+opacity:1;
+transform:translateY(0);
 }
 
 .section h2{
@@ -92,7 +85,6 @@ letter-spacing:2px;
 
 .carousel{
 position:relative;
-overflow:hidden;
 }
 
 .carousel-track{
@@ -100,15 +92,34 @@ display:flex;
 gap:20px;
 overflow-x:auto;
 scroll-behavior:smooth;
+padding:20px 0;
 }
 
-.carousel-track img{
-width:260px;
+/* TARJETAS */
+
+.card{
+min-width:260px;
 height:260px;
-object-fit:cover;
 border-radius:15px;
+overflow:hidden;
+position:relative;
+transition:.4s;
 cursor:pointer;
-box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+
+.card img,
+.card video{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* EFECTO NETFLIX */
+
+.card:hover{
+transform:scale(1.15);
+z-index:5;
+box-shadow:0 20px 40px rgba(0,0,0,.4);
 }
 
 /* FLECHAS */
@@ -117,45 +128,27 @@ box-shadow:0 8px 20px rgba(0,0,0,.2);
 position:absolute;
 top:50%;
 transform:translateY(-50%);
-background:white;
+background:rgba(255,255,255,0.9);
 border:none;
-font-size:25px;
 width:45px;
 height:45px;
 border-radius:50%;
+font-size:25px;
 cursor:pointer;
-box-shadow:0 5px 15px rgba(0,0,0,.3);
-z-index:10;
+opacity:0;
+transition:.3s;
+}
+
+.carousel:hover .arrow{
+opacity:1;
 }
 
 .arrow-left{
-left:10px;
+left:-10px;
 }
 
 .arrow-right{
-right:10px;
-}
-
-/* BOTON REGRESAR */
-
-.back{
-margin-top:60px;
-text-align:center;
-}
-
-.btn{
-padding:15px 45px;
-border-radius:50px;
-text-decoration:none;
-background:linear-gradient(135deg,#1f3c88,#3c78d8);
-color:white;
-font-weight:600;
-transition:0.3s;
-box-shadow:0 10px 25px rgba(31,60,136,0.4);
-}
-
-.btn:hover{
-transform:translateY(-5px);
+right:-10px;
 }
 
 /* LIGHTBOX */
@@ -166,13 +159,13 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.85);
+background:rgba(0,0,0,.9);
 display:flex;
 align-items:center;
 justify-content:center;
 opacity:0;
 pointer-events:none;
-transition:0.3s;
+transition:.3s;
 z-index:1000;
 }
 
@@ -187,20 +180,9 @@ opacity:1;
 pointer-events:auto;
 }
 
-/* FOOTER */
-
-footer{
-margin-top:60px;
-padding:25px;
-background:#1f3c88;
-color:white;
-text-align:center;
-font-size:14px;
-}
-
 /* WHATSAPP */
 
-.whatsapp-float{
+.whatsapp{
 position:fixed;
 bottom:25px;
 right:25px;
@@ -214,26 +196,17 @@ align-items:center;
 justify-content:center;
 font-size:30px;
 text-decoration:none;
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
-transition:0.3s;
-z-index:999;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
 }
 
-.whatsapp-float:hover{
-transform:scale(1.1);
-}
+/* FOOTER */
 
-/* ANIMACION */
-
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(20px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+footer{
+margin-top:60px;
+padding:25px;
+background:#1f3c88;
+color:white;
+text-align:center;
 }
 
 </style>
@@ -241,24 +214,17 @@ transform:translateY(0);
 
 <body>
 
-<!-- NAVBAR -->
-
 <div class="navbar">
-<div class="navbar-left">
 <img src="logo.png">
 <h2>IMPRESIONES COMPÁS</h2>
-</div>
 </div>
 
 <div class="container">
 
 <h1>NUESTROS TRABAJOS</h1>
+<p class="sub">Algunos de nuestros trabajos de impresión</p>
 
-<p class="sub">
-Algunos de nuestros trabajos de impresión, stickers, lonas, vinil y más.
-</p>
-
-<!-- STICKERS -->
+<!-- SECCION -->
 
 <div class="section">
 
@@ -266,24 +232,37 @@ Algunos de nuestros trabajos de impresión, stickers, lonas, vinil y más.
 
 <div class="carousel">
 
-<button class="arrow arrow-left" onclick="moveSlide(this,-1)">❮</button>
+<button class="arrow arrow-left" onclick="move(this,-1)">❮</button>
 
 <div class="carousel-track">
 
+<div class="card">
 <img src="s1.jpg">
+</div>
+
+<div class="card">
+<video muted loop class="auto-video">
+<source src="video1.mp4" type="video/mp4">
+</video>
+</div>
+
+<div class="card">
 <img src="s2.jpg">
+</div>
+
+<div class="card">
 <img src="s3.jpg">
-<img src="s4.jpg">
-
-</div>
-
-<button class="arrow arrow-right" onclick="moveSlide(this,1)">❯</button>
-
 </div>
 
 </div>
 
-<!-- VINIL -->
+<button class="arrow arrow-right" onclick="move(this,1)">❯</button>
+
+</div>
+
+</div>
+
+<!-- SECCION -->
 
 <div class="section">
 
@@ -291,75 +270,34 @@ Algunos de nuestros trabajos de impresión, stickers, lonas, vinil y más.
 
 <div class="carousel">
 
-<button class="arrow arrow-left" onclick="moveSlide(this,-1)">❮</button>
+<button class="arrow arrow-left" onclick="move(this,-1)">❮</button>
 
 <div class="carousel-track">
 
+<div class="card">
 <img src="v1.jpg">
+</div>
+
+<div class="card">
 <img src="v2.jpg">
+</div>
+
+<div class="card">
+<video muted loop class="auto-video">
+<source src="video2.mp4" type="video/mp4">
+</video>
+</div>
+
+<div class="card">
 <img src="v3.jpg">
-<img src="v4.jpg">
-
-</div>
-
-<button class="arrow arrow-right" onclick="moveSlide(this,1)">❯</button>
-
 </div>
 
 </div>
 
-<!-- LONAS -->
-
-<div class="section">
-
-<h2>LONAS</h2>
-
-<div class="carousel">
-
-<button class="arrow arrow-left" onclick="moveSlide(this,-1)">❮</button>
-
-<div class="carousel-track">
-
-<img src="l1.jpg">
-<img src="l2.jpg">
-<img src="l3.jpg">
-<img src="l4.jpg">
+<button class="arrow arrow-right" onclick="move(this,1)">❯</button>
 
 </div>
 
-<button class="arrow arrow-right" onclick="moveSlide(this,1)">❯</button>
-
-</div>
-
-</div>
-
-<!-- DISEÑOS -->
-
-<div class="section">
-
-<h2>DISEÑOS</h2>
-
-<div class="carousel">
-
-<button class="arrow arrow-left" onclick="moveSlide(this,-1)">❮</button>
-
-<div class="carousel-track">
-
-<img src="d1.jpg">
-<img src="d2.jpg">
-<img src="d3.jpg">
-<img src="d4.jpg">
-
-</div>
-
-<button class="arrow arrow-right" onclick="moveSlide(this,1)">❯</button>
-
-</div>
-
-</div>
-
-<div class="back">
-<a href="index.html" class="btn">⬅ REGRESAR</a>
 </div>
 
 </div>
@@ -370,27 +308,24 @@ Algunos de nuestros trabajos de impresión, stickers, lonas, vinil y más.
 <img id="lightbox-img">
 </div>
 
-<!-- WHATSAPP -->
-
-<a href="https://wa.me/5218781280497" class="whatsapp-float" target="_blank">
+<a href="https://wa.me/5218781280497" class="whatsapp">
 <i class="fab fa-whatsapp"></i>
 </a>
 
 <footer>
-© 2026 Impresiones Compás — Todos los derechos reservados
+© 2026 Impresiones Compás
 </footer>
 
 <script>
 
 /* CARRUSEL */
 
-function moveSlide(button,direction){
+function move(btn,dir){
 
-const carousel = button.parentElement
-const track = carousel.querySelector(".carousel-track")
+const track = btn.parentElement.querySelector(".carousel-track")
 
 track.scrollBy({
-left: direction * 300,
+left: dir * 320,
 behavior:"smooth"
 })
 
@@ -401,23 +336,57 @@ behavior:"smooth"
 const lightbox=document.getElementById("lightbox")
 const lightboxImg=document.getElementById("lightbox-img")
 
-document.querySelectorAll(".carousel-track img").forEach(img=>{
+document.querySelectorAll(".card img").forEach(img=>{
 
-img.addEventListener("click",()=>{
-
+img.onclick=()=>{
 lightbox.classList.add("show")
 lightboxImg.src=img.src
+}
 
 })
 
-})
-
-lightbox.addEventListener("click",()=>{
+lightbox.onclick=()=>{
 lightbox.classList.remove("show")
+}
+
+/* VIDEO AUTO */
+
+const videos=document.querySelectorAll(".auto-video")
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+entry.target.play()
+}else{
+entry.target.pause()
+}
+
+})
+})
+
+videos.forEach(video=>{
+observer.observe(video)
+})
+
+/* SCROLL ANIMATION */
+
+const sections=document.querySelectorAll(".section")
+
+const obs=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show")
+}
+})
+})
+
+sections.forEach(sec=>{
+obs.observe(sec)
 })
 
 </script>
 
 </body>
 </html>
-```
+
