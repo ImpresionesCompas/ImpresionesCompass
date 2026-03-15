@@ -94,8 +94,9 @@ h1{
 .item img,
 .video-hover{
     width:100%;
-    height:300px; /* más grande que antes */
-    object-fit:cover;
+    height:350px; /* más grande */
+    object-fit:contain; /* muestra todo el contenido */
+    background:#f0f0f0; /* fondo neutro para las franjas */
     border-radius:15px;
     box-shadow:0 10px 25px rgba(0,0,0,0.1);
     transition:0.3s;
@@ -184,7 +185,7 @@ h1{
     </div>
 
     <div class="item">
-        <video class="video-hover" muted>
+        <video class="video-hover" muted controls>
             <source src="video1.mp4" type="video/mp4">
             Tu navegador no soporta la reproducción de videos.
         </video>
