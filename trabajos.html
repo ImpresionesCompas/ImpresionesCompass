@@ -10,11 +10,7 @@
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 font-family:'Segoe UI',sans-serif;
@@ -22,7 +18,6 @@ background:linear-gradient(135deg,#eef4ff,#dbe9ff,#c6dcff);
 }
 
 /* NAVBAR */
-
 .navbar{
 width:100%;
 padding:15px 40px;
@@ -33,13 +28,9 @@ color:white;
 box-shadow:0 5px 20px rgba(0,0,0,0.2);
 }
 
-.navbar img{
-height:45px;
-margin-right:10px;
-}
+.navbar img{height:45px;margin-right:10px;}
 
 /* CONTENIDO */
-
 .container{
 padding:60px 20px;
 max-width:1200px;
@@ -61,7 +52,6 @@ margin-bottom:50px;
 }
 
 /* SECCIONES */
-
 .section{
 margin-bottom:70px;
 opacity:0;
@@ -81,10 +71,7 @@ letter-spacing:2px;
 }
 
 /* CARRUSEL */
-
-.carousel{
-position:relative;
-}
+.carousel{position:relative;}
 
 .carousel-track{
 display:flex;
@@ -95,7 +82,6 @@ padding:20px 0;
 }
 
 /* TARJETAS */
-
 .card{
 min-width:260px;
 height:260px;
@@ -113,8 +99,7 @@ height:100%;
 object-fit:cover;
 }
 
-/* EFECTO NETFLIX */
-
+/* EFECTO */
 .card:hover{
 transform:scale(1.15);
 z-index:5;
@@ -122,7 +107,6 @@ box-shadow:0 20px 40px rgba(0,0,0,.4);
 }
 
 /* FLECHAS */
-
 .arrow{
 position:absolute;
 top:50%;
@@ -138,20 +122,11 @@ opacity:0;
 transition:.3s;
 }
 
-.carousel:hover .arrow{
-opacity:1;
-}
-
-.arrow-left{
-left:-10px;
-}
-
-.arrow-right{
-right:-10px;
-}
+.carousel:hover .arrow{opacity:1;}
+.arrow-left{left:-10px;}
+.arrow-right{right:-10px;}
 
 /* LIGHTBOX */
-
 .lightbox{
 position:fixed;
 top:0;
@@ -180,7 +155,6 @@ pointer-events:auto;
 }
 
 /* WHATSAPP */
-
 .whatsapp{
 position:fixed;
 bottom:25px;
@@ -198,8 +172,7 @@ text-decoration:none;
 box-shadow:0 10px 25px rgba(0,0,0,.3);
 }
 
-/* BOTON REGRESAR */
-
+/* BOTON */
 .back-btn{
 display:block;
 margin:40px auto;
@@ -211,16 +184,12 @@ background:linear-gradient(135deg,#1f3c88,#3c78d8);
 color:white;
 transition:0.3s;
 box-shadow:0 10px 25px rgba(31,60,136,0.3);
-text-align:center;
 width:max-content;
 }
 
-.back-btn:hover{
-transform:translateY(-4px);
-}
+.back-btn:hover{transform:translateY(-4px);}
 
 /* FOOTER */
-
 footer{
 margin-top:60px;
 padding:25px;
@@ -244,88 +213,49 @@ text-align:center;
 <h1>NUESTROS TRABAJOS</h1>
 <p class="sub">Algunos de nuestros trabajos de impresión</p>
 
-<!-- SECCION -->
-
+<!-- STICKERS -->
 <div class="section">
-
 <h2>STICKERS</h2>
-
 <div class="carousel">
-
 <button class="arrow arrow-left" onclick="move(this,-1)">❮</button>
-
 <div class="carousel-track">
-
-<div class="card">
-<img src="stickers.jpg">
-</div>
-
+<div class="card"><img src="stickers.jpg"></div>
 <div class="card">
 <video muted loop class="auto-video">
 <source src="video1.mp4" type="video/mp4">
 </video>
 </div>
-
-<div class="card">
-<img src="s2.jpg">
+<div class="card"><img src="s2.jpg"></div>
+<div class="card"><img src="s3.jpg"></div>
 </div>
-
-<div class="card">
-<img src="s3.jpg">
-</div>
-
-</div>
-
 <button class="arrow arrow-right" onclick="move(this,1)">❯</button>
-
+</div>
 </div>
 
-</div>
-
-<!-- SECCION -->
-
+<!-- VINIL -->
 <div class="section">
-
 <h2>VINIL</h2>
-
 <div class="carousel">
-
 <button class="arrow arrow-left" onclick="move(this,-1)">❮</button>
-
 <div class="carousel-track">
-
-<div class="card">
-<img src="v1.jpg">
-</div>
-
-<div class="card">
-<img src="v2.jpg">
-</div>
-
+<div class="card"><img src="v1.jpg"></div>
+<div class="card"><img src="v2.jpg"></div>
 <div class="card">
 <video muted loop class="auto-video">
 <source src="video2.mp4" type="video/mp4">
 </video>
 </div>
-
-<div class="card">
-<img src="v3.jpg">
+<div class="card"><img src="v3.jpg"></div>
 </div>
-
-</div>
-
 <button class="arrow arrow-right" onclick="move(this,1)">❯</button>
-
+</div>
 </div>
 
-</div>
+<!-- AGREGA AQUÍ TODAS LAS DEMÁS SECCIONES IGUAL (coroplast, bordado, etc) -->
 
-<!-- BOTON REGRESAR -->
 <a href="index.html" class="back-btn">⬅ REGRESAR</a>
 
 </div>
-
-<!-- LIGHTBOX -->
 
 <div class="lightbox" id="lightbox">
 <img id="lightbox-img">
@@ -340,18 +270,10 @@ text-align:center;
 </footer>
 
 <script>
-
-/* CARRUSEL */
-
 function move(btn,dir){
 const track = btn.parentElement.querySelector(".carousel-track")
-track.scrollBy({
-left: dir * 320,
-behavior:"smooth"
-})
+track.scrollBy({left: dir * 320,behavior:"smooth"})
 }
-
-/* LIGHTBOX */
 
 const lightbox=document.getElementById("lightbox")
 const lightboxImg=document.getElementById("lightbox-img")
@@ -363,44 +285,23 @@ lightboxImg.src=img.src
 }
 })
 
-lightbox.onclick=()=>{
-lightbox.classList.remove("show")
-}
-
-/* VIDEO AUTO */
-
-const videos=document.querySelectorAll(".auto-video")
+lightbox.onclick=()=>lightbox.classList.remove("show")
 
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.play()
-}else{
-entry.target.pause()
-}
+entry.isIntersecting?entry.target.play():entry.target.pause()
 })
 })
 
-videos.forEach(video=>{
-observer.observe(video)
-})
-
-/* SCROLL ANIMATION */
-
-const sections=document.querySelectorAll(".section")
+document.querySelectorAll(".auto-video").forEach(v=>observer.observe(v))
 
 const obs=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show")
-}
+if(entry.isIntersecting)entry.target.classList.add("show")
 })
 })
 
-sections.forEach(sec=>{
-obs.observe(sec)
-})
-
+document.querySelectorAll(".section").forEach(sec=>obs.observe(sec))
 </script>
 
 </body>
