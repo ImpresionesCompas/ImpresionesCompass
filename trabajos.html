@@ -9,109 +9,399 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
-  font-family:'Segoe UI',sans-serif;
-  background:linear-gradient(135deg,#eef4ff,#dbe9ff,#c6dcff);
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#eef4ff,#dbe9ff,#c6dcff);
 }
 
 /* NAVBAR */
+
 .navbar{
-  width:100%;
-  padding:15px 40px;
-  display:flex;
-  align-items:center;
-  background:#1f3c88;
-  color:white;
+width:100%;
+padding:15px 40px;
+display:flex;
+align-items:center;
+background:#1f3c88;
+color:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
 }
 
-.navbar img{height:45px;margin-right:10px;}
+.navbar img{
+height:45px;
+margin-right:10px;
+}
 
 /* CONTENIDO */
+
 .container{
-  padding:60px 20px;
-  max-width:1200px;
-  margin:auto;
+padding:60px 20px;
+max-width:1200px;
+margin:auto;
 }
 
 h1{
-  text-align:center;
-  font-size:36px;
-  color:#1f3c88;
-  margin-bottom:10px;
+text-align:center;
+font-size:36px;
+letter-spacing:4px;
+color:#1f3c88;
+margin-bottom:15px;
 }
 
-.sub{text-align:center;color:#555;margin-bottom:40px;}
-
-/* GALERIA SIMPLE */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+.sub{
+text-align:center;
+color:#555;
+margin-bottom:50px;
 }
+
+/* SECCIONES */
+
+.section{
+margin-bottom:70px;
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.section h2{
+color:#1f3c88;
+margin-bottom:20px;
+letter-spacing:2px;
+}
+
+/* CARRUSEL */
+
+.carousel{
+position:relative;
+}
+
+.carousel-track{
+display:flex;
+gap:20px;
+overflow-x:auto;
+scroll-behavior:smooth;
+padding:20px 0;
+}
+
+/* TARJETAS */
 
 .card{
-  height:250px;
-  border-radius:15px;
-  overflow:hidden;
+min-width:260px;
+height:260px;
+border-radius:15px;
+overflow:hidden;
+position:relative;
+transition:.4s;
+cursor:pointer;
 }
 
 .card img,
 .card video{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
-/* BOTON */
+/* EFECTO NETFLIX */
+
+.card:hover{
+transform:scale(1.15);
+z-index:5;
+box-shadow:0 20px 40px rgba(0,0,0,.4);
+}
+
+/* FLECHAS */
+
+.arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(255,255,255,0.9);
+border:none;
+width:45px;
+height:45px;
+border-radius:50%;
+font-size:25px;
+cursor:pointer;
+opacity:0;
+transition:.3s;
+}
+
+.carousel:hover .arrow{
+opacity:1;
+}
+
+.arrow-left{
+left:-10px;
+}
+
+.arrow-right{
+right:-10px;
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+display:flex;
+align-items:center;
+justify-content:center;
+opacity:0;
+pointer-events:none;
+transition:.3s;
+z-index:1000;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+.lightbox.show{
+opacity:1;
+pointer-events:auto;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25d366;
+color:white;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+/* BOTON REGRESAR */
+
 .back-btn{
-  display:block;
-  margin:40px auto;
-  padding:12px 40px;
-  border-radius:50px;
-  text-decoration:none;
-  background:#1f3c88;
-  color:white;
-  width:max-content;
+display:block;
+margin:40px auto;
+padding:14px 45px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+background:linear-gradient(135deg,#1f3c88,#3c78d8);
+color:white;
+transition:0.3s;
+box-shadow:0 10px 25px rgba(31,60,136,0.3);
+text-align:center;
+width:max-content;
+}
+
+.back-btn:hover{
+transform:translateY(-4px);
 }
 
 /* FOOTER */
+
 footer{
-  padding:20px;
-  background:#1f3c88;
-  color:white;
-  text-align:center;
+margin-top:60px;
+padding:25px;
+background:#1f3c88;
+color:white;
+text-align:center;
 }
+
 </style>
 </head>
 
 <body>
 
 <div class="navbar">
-  <img src="logo.png">
-  <h2>IMPRESIONES COMPÁS</h2>
+<img src="logo.png">
+<h2>IMPRESIONES COMPÁS</h2>
 </div>
 
 <div class="container">
 
-  <h1>NUESTROS TRABAJOS</h1>
-  <p class="sub">Algunos de nuestros trabajos</p>
+<h1>NUESTROS TRABAJOS</h1>
+<p class="sub">Algunos de nuestros trabajos de impresión</p>
 
-  <!-- Aquí agregas tus fotos manualmente -->
-  <div class="grid">
-    <div class="card"><img src="https://github.com/usuario/repositorio/raw/main/fotos/stickers.jpg"></div>
-    <div class="card"><img src="https://github.com/usuario/repositorio/raw/main/fotos/vinil.jpg"></div>
-    <div class="card"><img src="https://github.com/usuario/repositorio/raw/main/fotos/playera.jpg"></div>
-    <!-- Agrega más imágenes según necesites -->
-  </div>
+<!-- SECCION -->
 
-  <a href="index.html" class="back-btn">⬅ REGRESAR</a>
+<div class="section">
+
+<h2>STICKERS</h2>
+
+<div class="carousel">
+
+<button class="arrow arrow-left" onclick="move(this,-1)">❮</button>
+
+<div class="carousel-track">
+
+<div class="card">
+<img src="s1.jpg">
 </div>
 
+<div class="card">
+<video muted loop class="auto-video">
+<source src="video1.mp4" type="video/mp4">
+</video>
+</div>
+
+<div class="card">
+<img src="s2.jpg">
+</div>
+
+<div class="card">
+<img src="s3.jpg">
+</div>
+
+</div>
+
+<button class="arrow arrow-right" onclick="move(this,1)">❯</button>
+
+</div>
+
+</div>
+
+<!-- SECCION -->
+
+<div class="section">
+
+<h2>VINIL</h2>
+
+<div class="carousel">
+
+<button class="arrow arrow-left" onclick="move(this,-1)">❮</button>
+
+<div class="carousel-track">
+
+<div class="card">
+<img src="v1.jpg">
+</div>
+
+<div class="card">
+<img src="v2.jpg">
+</div>
+
+<div class="card">
+<video muted loop class="auto-video">
+<source src="video2.mp4" type="video/mp4">
+</video>
+</div>
+
+<div class="card">
+<img src="v3.jpg">
+</div>
+
+</div>
+
+<button class="arrow arrow-right" onclick="move(this,1)">❯</button>
+
+</div>
+
+</div>
+
+<!-- BOTON REGRESAR -->
+<a href="index.html" class="back-btn">⬅ REGRESAR</a>
+
+</div>
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+<img id="lightbox-img">
+</div>
+
+<a href="https://wa.me/5218781280497" class="whatsapp">
+<i class="fab fa-whatsapp"></i>
+</a>
+
 <footer>
-  © 2026 Impresiones Compás
+© 2026 Impresiones Compás
 </footer>
+
+<script>
+
+/* CARRUSEL */
+
+function move(btn,dir){
+const track = btn.parentElement.querySelector(".carousel-track")
+track.scrollBy({
+left: dir * 320,
+behavior:"smooth"
+})
+}
+
+/* LIGHTBOX */
+
+const lightbox=document.getElementById("lightbox")
+const lightboxImg=document.getElementById("lightbox-img")
+
+document.querySelectorAll(".card img").forEach(img=>{
+img.onclick=()=>{
+lightbox.classList.add("show")
+lightboxImg.src=img.src
+}
+})
+
+lightbox.onclick=()=>{
+lightbox.classList.remove("show")
+}
+
+/* VIDEO AUTO */
+
+const videos=document.querySelectorAll(".auto-video")
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.play()
+}else{
+entry.target.pause()
+}
+})
+})
+
+videos.forEach(video=>{
+observer.observe(video)
+})
+
+/* SCROLL ANIMATION */
+
+const sections=document.querySelectorAll(".section")
+
+const obs=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show")
+}
+})
+})
+
+sections.forEach(sec=>{
+obs.observe(sec)
+})
+
+</script>
 
 </body>
 </html>
