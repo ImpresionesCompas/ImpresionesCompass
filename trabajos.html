@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,6 +20,7 @@ background:linear-gradient(135deg,#eef4ff,#dbe9ff,#c6dcff);
 
 /* NAVBAR */
 .navbar{
+width:100%;
 padding:15px 40px;
 display:flex;
 align-items:center;
@@ -30,9 +32,20 @@ box-shadow:0 5px 20px rgba(0,0,0,0.2);
 .navbar img{height:45px;margin-right:10px;}
 
 /* CONTENIDO */
-.container{padding:60px 20px;max-width:1200px;margin:auto;}
+.container{
+padding:60px 20px;
+max-width:1200px;
+margin:auto;
+}
 
-h1{text-align:center;font-size:36px;color:#1f3c88;margin-bottom:10px;}
+h1{
+text-align:center;
+font-size:36px;
+letter-spacing:4px;
+color:#1f3c88;
+margin-bottom:15px;
+}
+
 .sub{text-align:center;color:#555;margin-bottom:50px;}
 
 /* SECCIONES */
@@ -42,12 +55,21 @@ opacity:0;
 transform:translateY(40px);
 transition:1s;
 }
-.section.show{opacity:1;transform:translateY(0);}
 
-.section h2{color:#1f3c88;margin-bottom:20px;}
+.section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.section h2{
+color:#1f3c88;
+margin-bottom:20px;
+letter-spacing:2px;
+}
 
 /* CARRUSEL */
 .carousel{position:relative;}
+
 .carousel-track{
 display:flex;
 gap:20px;
@@ -63,8 +85,8 @@ height:260px;
 border-radius:15px;
 overflow:hidden;
 position:relative;
-cursor:pointer;
 transition:.4s;
+cursor:pointer;
 }
 
 .card img,
@@ -74,43 +96,11 @@ height:100%;
 object-fit:cover;
 }
 
-/* HOVER PRO */
+/* EFECTO */
 .card:hover{
 transform:scale(1.15);
 z-index:5;
 box-shadow:0 20px 40px rgba(0,0,0,.4);
-}
-
-/* OVERLAY */
-.overlay{
-position:absolute;
-bottom:0;
-width:100%;
-background:linear-gradient(transparent,rgba(0,0,0,.8));
-color:white;
-padding:10px;
-font-size:14px;
-opacity:0;
-transition:.3s;
-}
-
-.card:hover .overlay{opacity:1;}
-
-/* PLAY ICON */
-.play{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-font-size:40px;
-color:white;
-background:rgba(0,0,0,.5);
-width:70px;
-height:70px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
 }
 
 /* FLECHAS */
@@ -118,14 +108,17 @@ border-radius:50%;
 position:absolute;
 top:50%;
 transform:translateY(-50%);
-background:white;
+background:rgba(255,255,255,0.9);
 border:none;
 width:45px;
 height:45px;
 border-radius:50%;
+font-size:25px;
 cursor:pointer;
 opacity:0;
+transition:.3s;
 }
+
 .carousel:hover .arrow{opacity:1;}
 .arrow-left{left:-10px;}
 .arrow-right{right:-10px;}
@@ -145,19 +138,20 @@ opacity:0;
 pointer-events:none;
 transition:.3s;
 z-index:1000;
-flex-direction:column;
 }
 
-.lightbox img,
-.lightbox video{
+.lightbox img{
 max-width:90%;
-max-height:80%;
+max-height:90%;
 border-radius:10px;
 }
 
-.lightbox.show{opacity:1;pointer-events:auto;}
+.lightbox.show{
+opacity:1;
+pointer-events:auto;
+}
 
-/* WHATS */
+/* WHATSAPP */
 .whatsapp{
 position:fixed;
 bottom:25px;
@@ -171,6 +165,8 @@ display:flex;
 align-items:center;
 justify-content:center;
 font-size:30px;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
 }
 
 /* BOTON */
@@ -180,12 +176,19 @@ margin:40px auto;
 padding:14px 45px;
 border-radius:50px;
 text-decoration:none;
-background:#1f3c88;
+font-weight:600;
+background:linear-gradient(135deg,#1f3c88,#3c78d8);
 color:white;
+transition:0.3s;
+box-shadow:0 10px 25px rgba(31,60,136,0.3);
+width:max-content;
 }
+
+.back-btn:hover{transform:translateY(-4px);}
 
 /* FOOTER */
 footer{
+margin-top:60px;
 padding:25px;
 background:#1f3c88;
 color:white;
@@ -205,42 +208,31 @@ text-align:center;
 <div class="container">
 
 <h1>NUESTROS TRABAJOS</h1>
-<p class="sub">Calidad profesional en cada proyecto</p>
+<p class="sub">Algunos de nuestros trabajos de impresión</p>
 
+<!-- FUNCIÓN PARA CREAR SECCIONES RÁPIDO -->
+<!-- SOLO CAMBIA NOMBRES DE IMAGENES -->
+
+<!-- TODAS LAS SECCIONES -->
 <script>
-function crearSeccion(titulo,prefix){
+function crearSeccion(titulo, prefijo){
 document.write(`
 <div class="section">
 <h2>${titulo}</h2>
-
 <div class="carousel">
 <button class="arrow arrow-left" onclick="move(this,-1)">❮</button>
 
 <div class="carousel-track">
+<div class="card"><img src="${prefijo}1.jpg"></div>
 
 <div class="card">
-<img src="${prefix}1.jpg">
-<div class="overlay">${titulo}</div>
-</div>
-
-<div class="card video-card">
 <video muted loop class="auto-video">
-<source src="${prefix}_video.mp4" type="video/mp4">
+<source src="${prefijo}_video.mp4" type="video/mp4">
 </video>
-<div class="play"><i class="fas fa-play"></i></div>
-<div class="overlay">Ver video</div>
 </div>
 
-<div class="card">
-<img src="${prefix}2.jpg">
-<div class="overlay">${titulo}</div>
-</div>
-
-<div class="card">
-<img src="${prefix}3.jpg">
-<div class="overlay">${titulo}</div>
-</div>
-
+<div class="card"><img src="${prefijo}2.jpg"></div>
+<div class="card"><img src="${prefijo}3.jpg"></div>
 </div>
 
 <button class="arrow arrow-right" onclick="move(this,1)">❯</button>
@@ -269,61 +261,53 @@ crearSeccion("VINIL DE CORTE","vc")
 </div>
 
 <!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox"></div>
+<div class="lightbox" id="lightbox">
+<img id="lightbox-img">
+</div>
 
 <a href="https://wa.me/5218781280497" class="whatsapp">
 <i class="fab fa-whatsapp"></i>
 </a>
 
-<footer>© 2026 Impresiones Compás</footer>
+<footer>
+© 2026 Impresiones Compás
+</footer>
 
 <script>
 
 /* CARRUSEL */
 function move(btn,dir){
-const track=btn.parentElement.querySelector(".carousel-track")
-track.scrollBy({left:dir*320,behavior:"smooth"})
+const track = btn.parentElement.querySelector(".carousel-track")
+track.scrollBy({left: dir * 320,behavior:"smooth"})
 }
 
-/* LIGHTBOX PRO */
+/* LIGHTBOX */
 const lightbox=document.getElementById("lightbox")
+const lightboxImg=document.getElementById("lightbox-img")
 
 document.addEventListener("click",e=>{
-const card=e.target.closest(".card")
-if(!card)return
-
-lightbox.innerHTML=""
-
-if(card.querySelector("video")){
-const video=document.createElement("video")
-video.src=card.querySelector("source").src
-video.controls=true
-video.autoplay=true
-lightbox.appendChild(video)
-}else{
-const img=document.createElement("img")
-img.src=card.querySelector("img").src
-lightbox.appendChild(img)
-}
-
+if(e.target.tagName==="IMG"){
 lightbox.classList.add("show")
+lightboxImg.src=e.target.src
+}
 })
 
 lightbox.onclick=()=>lightbox.classList.remove("show")
 
-/* AUTO VIDEO */
+/* VIDEO AUTO */
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
-entry.isIntersecting?entry.target.play():entry.target.pause()
+if(entry.isIntersecting){entry.target.play()}
+else{entry.target.pause()}
 })
 })
 
 document.querySelectorAll(".auto-video").forEach(v=>observer.observe(v))
 
-/* SCROLL */
+/* SCROLL ANIM */
 const obs=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
-if(entry.isIntersecting)entry.target.classList.add("show")
+if(entry.isIntersecting){entry.target.classList.add("show")}
 })
 })
 
