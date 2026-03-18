@@ -10,11 +10,7 @@
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 font-family:'Segoe UI',sans-serif;
@@ -22,9 +18,7 @@ background:linear-gradient(135deg,#eef4ff,#dbe9ff,#c6dcff);
 }
 
 /* NAVBAR */
-
 .navbar{
-width:100%;
 padding:15px 40px;
 display:flex;
 align-items:center;
@@ -33,59 +27,27 @@ color:white;
 box-shadow:0 5px 20px rgba(0,0,0,0.2);
 }
 
-.navbar img{
-height:45px;
-margin-right:10px;
-}
+.navbar img{height:45px;margin-right:10px;}
 
 /* CONTENIDO */
+.container{padding:60px 20px;max-width:1200px;margin:auto;}
 
-.container{
-padding:60px 20px;
-max-width:1200px;
-margin:auto;
-}
-
-h1{
-text-align:center;
-font-size:36px;
-letter-spacing:4px;
-color:#1f3c88;
-margin-bottom:15px;
-}
-
-.sub{
-text-align:center;
-color:#555;
-margin-bottom:50px;
-}
+h1{text-align:center;font-size:36px;color:#1f3c88;margin-bottom:10px;}
+.sub{text-align:center;color:#555;margin-bottom:50px;}
 
 /* SECCIONES */
-
 .section{
 margin-bottom:70px;
 opacity:0;
 transform:translateY(40px);
 transition:1s;
 }
+.section.show{opacity:1;transform:translateY(0);}
 
-.section.show{
-opacity:1;
-transform:translateY(0);
-}
-
-.section h2{
-color:#1f3c88;
-margin-bottom:20px;
-letter-spacing:2px;
-}
+.section h2{color:#1f3c88;margin-bottom:20px;}
 
 /* CARRUSEL */
-
-.carousel{
-position:relative;
-}
-
+.carousel{position:relative;}
 .carousel-track{
 display:flex;
 gap:20px;
@@ -95,15 +57,14 @@ padding:20px 0;
 }
 
 /* TARJETAS */
-
 .card{
 min-width:260px;
 height:260px;
 border-radius:15px;
 overflow:hidden;
 position:relative;
-transition:.4s;
 cursor:pointer;
+transition:.4s;
 }
 
 .card img,
@@ -113,45 +74,63 @@ height:100%;
 object-fit:cover;
 }
 
-/* EFECTO NETFLIX */
-
+/* HOVER PRO */
 .card:hover{
 transform:scale(1.15);
 z-index:5;
 box-shadow:0 20px 40px rgba(0,0,0,.4);
 }
 
-/* FLECHAS */
-
-.arrow{
+/* OVERLAY */
+.overlay{
 position:absolute;
-top:50%;
-transform:translateY(-50%);
-background:rgba(255,255,255,0.9);
-border:none;
-width:45px;
-height:45px;
-border-radius:50%;
-font-size:25px;
-cursor:pointer;
+bottom:0;
+width:100%;
+background:linear-gradient(transparent,rgba(0,0,0,.8));
+color:white;
+padding:10px;
+font-size:14px;
 opacity:0;
 transition:.3s;
 }
 
-.carousel:hover .arrow{
-opacity:1;
+.card:hover .overlay{opacity:1;}
+
+/* PLAY ICON */
+.play{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:40px;
+color:white;
+background:rgba(0,0,0,.5);
+width:70px;
+height:70px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
 }
 
-.arrow-left{
-left:-10px;
+/* FLECHAS */
+.arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:white;
+border:none;
+width:45px;
+height:45px;
+border-radius:50%;
+cursor:pointer;
+opacity:0;
 }
-
-.arrow-right{
-right:-10px;
-}
+.carousel:hover .arrow{opacity:1;}
+.arrow-left{left:-10px;}
+.arrow-right{right:-10px;}
 
 /* LIGHTBOX */
-
 .lightbox{
 position:fixed;
 top:0;
@@ -166,21 +145,19 @@ opacity:0;
 pointer-events:none;
 transition:.3s;
 z-index:1000;
+flex-direction:column;
 }
 
-.lightbox img{
+.lightbox img,
+.lightbox video{
 max-width:90%;
-max-height:90%;
+max-height:80%;
 border-radius:10px;
 }
 
-.lightbox.show{
-opacity:1;
-pointer-events:auto;
-}
+.lightbox.show{opacity:1;pointer-events:auto;}
 
-/* WHATSAPP */
-
+/* WHATS */
 .whatsapp{
 position:fixed;
 bottom:25px;
@@ -194,35 +171,21 @@ display:flex;
 align-items:center;
 justify-content:center;
 font-size:30px;
-text-decoration:none;
-box-shadow:0 10px 25px rgba(0,0,0,.3);
 }
 
-/* BOTON REGRESAR */
-
+/* BOTON */
 .back-btn{
 display:block;
 margin:40px auto;
 padding:14px 45px;
 border-radius:50px;
 text-decoration:none;
-font-weight:600;
-background:linear-gradient(135deg,#1f3c88,#3c78d8);
+background:#1f3c88;
 color:white;
-transition:0.3s;
-box-shadow:0 10px 25px rgba(31,60,136,0.3);
-text-align:center;
-width:max-content;
-}
-
-.back-btn:hover{
-transform:translateY(-4px);
 }
 
 /* FOOTER */
-
 footer{
-margin-top:60px;
 padding:25px;
 background:#1f3c88;
 color:white;
@@ -242,164 +205,129 @@ text-align:center;
 <div class="container">
 
 <h1>NUESTROS TRABAJOS</h1>
-<p class="sub">Algunos de nuestros trabajos de impresión</p>
+<p class="sub">Calidad profesional en cada proyecto</p>
 
-<!-- SECCION -->
-
+<script>
+function crearSeccion(titulo,prefix){
+document.write(`
 <div class="section">
-
-<h2>STICKERS</h2>
+<h2>${titulo}</h2>
 
 <div class="carousel">
-
 <button class="arrow arrow-left" onclick="move(this,-1)">❮</button>
 
 <div class="carousel-track">
 
 <div class="card">
-<img src="s1.jpg">
+<img src="${prefix}1.jpg">
+<div class="overlay">${titulo}</div>
 </div>
 
-<div class="card">
+<div class="card video-card">
 <video muted loop class="auto-video">
-<source src="video1.mp4" type="video/mp4">
+<source src="${prefix}_video.mp4" type="video/mp4">
 </video>
+<div class="play"><i class="fas fa-play"></i></div>
+<div class="overlay">Ver video</div>
 </div>
 
 <div class="card">
-<img src="s2.jpg">
+<img src="${prefix}2.jpg">
+<div class="overlay">${titulo}</div>
 </div>
 
 <div class="card">
-<img src="s3.jpg">
+<img src="${prefix}3.jpg">
+<div class="overlay">${titulo}</div>
 </div>
 
 </div>
 
 <button class="arrow arrow-right" onclick="move(this,1)">❯</button>
-
 </div>
-
 </div>
+`)
+}
+</script>
 
-<!-- SECCION -->
+<script>
+crearSeccion("STICKERS","s")
+crearSeccion("VINIL","v")
+crearSeccion("FIGURAS DE COROPLAST","coro")
+crearSeccion("BORDADO","bordado")
+crearSeccion("SELLOS","sello")
+crearSeccion("LONAS","lona")
+crearSeccion("PLAYERAS","playera")
+crearSeccion("TABLOIDES","tabloide")
+crearSeccion("SERIGRAFÍA","seri")
+crearSeccion("MICROPERFORADO","micro")
+crearSeccion("VINIL DE CORTE","vc")
+</script>
 
-<div class="section">
-
-<h2>VINIL</h2>
-
-<div class="carousel">
-
-<button class="arrow arrow-left" onclick="move(this,-1)">❮</button>
-
-<div class="carousel-track">
-
-<div class="card">
-<img src="v1.jpg">
-</div>
-
-<div class="card">
-<img src="v2.jpg">
-</div>
-
-<div class="card">
-<video muted loop class="auto-video">
-<source src="video2.mp4" type="video/mp4">
-</video>
-</div>
-
-<div class="card">
-<img src="v3.jpg">
-</div>
-
-</div>
-
-<button class="arrow arrow-right" onclick="move(this,1)">❯</button>
-
-</div>
-
-</div>
-
-<!-- BOTON REGRESAR -->
 <a href="index.html" class="back-btn">⬅ REGRESAR</a>
 
 </div>
 
 <!-- LIGHTBOX -->
-
-<div class="lightbox" id="lightbox">
-<img id="lightbox-img">
-</div>
+<div class="lightbox" id="lightbox"></div>
 
 <a href="https://wa.me/5218781280497" class="whatsapp">
 <i class="fab fa-whatsapp"></i>
 </a>
 
-<footer>
-© 2026 Impresiones Compás
-</footer>
+<footer>© 2026 Impresiones Compás</footer>
 
 <script>
 
 /* CARRUSEL */
-
 function move(btn,dir){
-const track = btn.parentElement.querySelector(".carousel-track")
-track.scrollBy({
-left: dir * 320,
-behavior:"smooth"
-})
+const track=btn.parentElement.querySelector(".carousel-track")
+track.scrollBy({left:dir*320,behavior:"smooth"})
 }
 
-/* LIGHTBOX */
-
+/* LIGHTBOX PRO */
 const lightbox=document.getElementById("lightbox")
-const lightboxImg=document.getElementById("lightbox-img")
 
-document.querySelectorAll(".card img").forEach(img=>{
-img.onclick=()=>{
-lightbox.classList.add("show")
-lightboxImg.src=img.src
+document.addEventListener("click",e=>{
+const card=e.target.closest(".card")
+if(!card)return
+
+lightbox.innerHTML=""
+
+if(card.querySelector("video")){
+const video=document.createElement("video")
+video.src=card.querySelector("source").src
+video.controls=true
+video.autoplay=true
+lightbox.appendChild(video)
+}else{
+const img=document.createElement("img")
+img.src=card.querySelector("img").src
+lightbox.appendChild(img)
 }
+
+lightbox.classList.add("show")
 })
 
-lightbox.onclick=()=>{
-lightbox.classList.remove("show")
-}
+lightbox.onclick=()=>lightbox.classList.remove("show")
 
-/* VIDEO AUTO */
-
-const videos=document.querySelectorAll(".auto-video")
-
+/* AUTO VIDEO */
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.play()
-}else{
-entry.target.pause()
-}
+entry.isIntersecting?entry.target.play():entry.target.pause()
 })
 })
 
-videos.forEach(video=>{
-observer.observe(video)
-})
+document.querySelectorAll(".auto-video").forEach(v=>observer.observe(v))
 
-/* SCROLL ANIMATION */
-
-const sections=document.querySelectorAll(".section")
-
+/* SCROLL */
 const obs=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show")
-}
+if(entry.isIntersecting)entry.target.classList.add("show")
 })
 })
 
-sections.forEach(sec=>{
-obs.observe(sec)
-})
+document.querySelectorAll(".section").forEach(sec=>obs.observe(sec))
 
 </script>
 
