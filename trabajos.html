@@ -199,6 +199,25 @@ text-decoration:none;
 box-shadow:0 10px 25px rgba(0,0,0,.3);
 }
 
+/* BOTON REGRESAR */
+
+.back-btn{
+display:inline-block;
+margin:40px auto 0;
+padding:14px 45px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+background:linear-gradient(135deg,#1f3c88,#3c78d8);
+color:white;
+transition:0.3s;
+box-shadow:0 10px 25px rgba(31,60,136,0.3);
+}
+
+.back-btn:hover{
+transform:translateY(-4px);
+}
+
 /* FOOTER */
 
 footer{
@@ -300,6 +319,9 @@ text-align:center;
 
 </div>
 
+<!-- BOTON REGRESAR -->
+<a href="index.html" class="back-btn">⬅ REGRESAR</a>
+
 </div>
 
 <!-- LIGHTBOX -->
@@ -321,14 +343,11 @@ text-align:center;
 /* CARRUSEL */
 
 function move(btn,dir){
-
 const track = btn.parentElement.querySelector(".carousel-track")
-
 track.scrollBy({
 left: dir * 320,
 behavior:"smooth"
 })
-
 }
 
 /* LIGHTBOX */
@@ -337,12 +356,10 @@ const lightbox=document.getElementById("lightbox")
 const lightboxImg=document.getElementById("lightbox-img")
 
 document.querySelectorAll(".card img").forEach(img=>{
-
 img.onclick=()=>{
 lightbox.classList.add("show")
 lightboxImg.src=img.src
 }
-
 })
 
 lightbox.onclick=()=>{
@@ -355,13 +372,11 @@ const videos=document.querySelectorAll(".auto-video")
 
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
-
 if(entry.isIntersecting){
 entry.target.play()
 }else{
 entry.target.pause()
 }
-
 })
 })
 
@@ -389,4 +404,3 @@ obs.observe(sec)
 
 </body>
 </html>
-
