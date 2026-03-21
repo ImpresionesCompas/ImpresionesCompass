@@ -198,7 +198,92 @@ text-align:center;
 <h1>NUESTROS TRABAJOS</h1>
 <p class="sub">Algunos de nuestros trabajos de impresión</p>
 
-<!-- Ejemplo de sección corregida: LONAS -->
+<!-- STICKERS -->
+<div class="section">
+<h2>STICKERS</h2>
+<div class="carousel">
+<button class="arrow arrow-left" onclick="move(this,-1)">❮</button>
+<div class="carousel-track">
+  <div class="card"><img src="stickers.jpg"></div>
+  <div class="card"><img src="s2.jpg"></div>
+  <div class="card"><img src="s3.jpg"></div>
+  <div class="card">
+    <video muted loop class="auto-video"><source src="video1.mp4" type="video/mp4"></video>
+  </div>
+</div>
+<button class="arrow arrow-right" onclick="move(this,1)">❯</button>
+</div>
+</div>
+
+<!-- VINIL -->
+<div class="section">
+<h2>VINIL</h2>
+<div class="carousel">
+<button class="arrow arrow-left" onclick="move(this,-1)">❮</button>
+<div class="carousel-track">
+  <div class="card"><img src="v1.jpg"></div>
+  <div class="card"><img src="v2.jpg"></div>
+  <div class="card"><img src="v3.jpg"></div>
+  <div class="card">
+    <video muted loop class="auto-video"><source src="video2.mp4" type="video/mp4"></video>
+  </div>
+</div>
+<button class="arrow arrow-right" onclick="move(this,1)">❯</button>
+</div>
+</div>
+
+<!-- COROPLAST -->
+<div class="section">
+<h2>COROPLAST</h2>
+<div class="carousel">
+<button class="arrow arrow-left" onclick="move(this,-1)">❮</button>
+<div class="carousel-track">
+  <div class="card"><img src="coro1.jpg"></div>
+  <div class="card"><img src="coro2.jpg"></div>
+  <div class="card"><img src="coro3.jpg"></div>
+  <div class="card">
+    <video muted loop class="auto-video"><source src="video3.mp4" type="video/mp4"></video>
+  </div>
+</div>
+<button class="arrow arrow-right" onclick="move(this,1)">❯</button>
+</div>
+</div>
+
+<!-- BORDADO -->
+<div class="section">
+<h2>BORDADO</h2>
+<div class="carousel">
+<button class="arrow arrow-left" onclick="move(this,-1)">❮</button>
+<div class="carousel-track">
+  <div class="card"><img src="bordado1.jpg"></div>
+  <div class="card"><img src="bordado2.jpg"></div>
+  <div class="card"><img src="bordado3.jpg"></div>
+  <div class="card">
+    <video muted loop class="auto-video"><source src="video4.mp4" type="video/mp4"></video>
+  </div>
+</div>
+<button class="arrow arrow-right" onclick="move(this,1)">❯</button>
+</div>
+</div>
+
+<!-- SELLOS -->
+<div class="section">
+<h2>SELLOS</h2>
+<div class="carousel">
+<button class="arrow arrow-left" onclick="move(this,-1)">❮</button>
+<div class="carousel-track">
+  <div class="card"><img src="sello1.jpg"></div>
+  <div class="card"><img src="sello2.jpg"></div>
+  <div class="card"><img src="sello3.jpg"></div>
+  <div class="card">
+    <video muted loop class="auto-video"><source src="video1.mp4" type="video/mp4"></video>
+  </div>
+</div>
+<button class="arrow arrow-right" onclick="move(this,1)">❯</button>
+</div>
+</div>
+
+<!-- LONAS -->
 <div class="section">
 <h2>LONAS</h2>
 <div class="carousel">
@@ -206,90 +291,11 @@ text-align:center;
 <div class="carousel-track">
   <div class="card"><img src="lona1.jpg"></div>
   <div class="card">
-    <video muted loop class="auto-video">
-      <source src="video1.mp4" type="video/mp4">
-    </video>
+    <video muted loop class="auto-video"><source src="video1.mp4" type="video/mp4"></video>
   </div>
   <div class="card"><img src="lona3.jpg"></div>
   <div class="card">
-    <video muted loop class="auto-video">
-      <source src="video4.mp4" type="video/mp4">
-    </video>
+    <video muted loop class="auto-video"><source src="video4.mp4" type="video/mp4"></video>
   </div>
 </div>
-<button class="arrow arrow-right" onclick="move(this,1)">❯</button>
-</div>
-</div>
-
-<!-- Aquí irían las demás secciones (stickers, vinil, etc.) igual que antes, pero asegurándote de que todos los videos estén dentro de .card -->
-
-<a href="index.html" class="back-btn">⬅ REGRESAR</a>
-
-</div>
-
-<div class="lightbox" id="lightbox">
-  <img id="lightbox-img" style="display:none">
-  <video id="lightbox-video" controls style="display:none"></video>
-</div>
-
-<a href="https://wa.me/5218781280497" class="whatsapp">
-<i class="fab fa-whatsapp"></i>
-</a>
-
-<footer>
-© 2026 Impresiones Compás
-</footer>
-
-<script>
-function move(btn,dir){
-  const track = btn.parentElement.querySelector(".carousel-track")
-  track.scrollBy({left: dir * 320,behavior:"smooth"})
-}
-
-const lightbox=document.getElementById("lightbox")
-const lightboxImg=document.getElementById("lightbox-img")
-const lightboxVideo=document.getElementById("lightbox-video")
-
-document.querySelectorAll(".card img").forEach(img=>{
-  img.onclick=()=>{
-    lightbox.classList.add("show")
-    lightboxImg.src=img.src
-    lightboxImg.style.display="block"
-    lightboxVideo.style.display="none"
-  }
-})
-
-document.querySelectorAll(".card video").forEach(video=>{
-  video.onclick=()=>{
-    lightbox.classList.add("show")
-    lightboxVideo.src=video.querySelector("source").src
-    lightboxVideo.style.display="block"
-    lightboxImg.style.display="none"
-    lightboxVideo.play()
-  }
-})
-
-lightbox.onclick=()=>{
-  lightbox.classList.remove("show")
-  lightboxVideo.pause()
-}
-
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    entry.isIntersecting?entry.target.play():entry.target.pause()
-  })
-})
-
-document.querySelectorAll(".auto-video").forEach(v=>observer.observe(v))
-
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting)entry.target.classList.add("show")
-  })
-})
-
-document.querySelectorAll(".section").forEach(sec=>obs.observe(sec))
-</script>
-
-</body>
-</html>
+<button
