@@ -16,7 +16,7 @@ font-family:'Segoe UI',sans-serif;
 background:linear-gradient(135deg,#eef4ff,#dbe9ff,#c6dcff);
 }
 
-/* NAVBAR (SIN CAMBIOS) */
+/* NAVBAR */
 .navbar{
 padding:15px 40px;
 display:flex;
@@ -45,7 +45,7 @@ font-size:38px;
 color:#1f3c88;
 }
 
-/* QUIENES SOMOS (IGUAL) */
+/* QUIENES SOMOS */
 .about{
 display:flex;
 align-items:center;
@@ -161,7 +161,7 @@ font-size:20px;
 .arrow-left{left:-10px;}
 .arrow-right{right:-10px;}
 
-/* RESEÑAS (MEJORADAS SIN CAMBIAR POSICIÓN) */
+/* RESEÑAS */
 .reviews{
 padding:60px 20px;
 text-align:center;
@@ -195,10 +195,19 @@ transition:.3s;
 transform:translateY(-5px);
 }
 
-.review img{
-width:50px;
-height:50px;
-border-radius:50%;
+/* 🔥 CUADRO PERFECTO PARA IMAGEN */
+.review-img{
+width:60px;
+height:60px;
+min-width:60px;
+border-radius:15px;
+overflow:hidden;
+background:#ddd;
+}
+
+.review-img img{
+width:100%;
+height:100%;
 object-fit:cover;
 }
 
@@ -273,7 +282,7 @@ text-decoration:none;
 
 <body>
 
-<!-- NAVBAR ORIGINAL -->
+<!-- NAVBAR -->
 <div class="navbar">
 <div style="display:flex;align-items:center;">
 <img src="logo.png">
@@ -339,49 +348,43 @@ Trabajamos con materiales resistentes y diseños personalizados.
 </div>
 </div>
 
-<!-- RESEÑAS (AQUÍ SOLO CAMBIAMOS ESTRELLAS) -->
+<!-- RESEÑAS -->
 <div class="reviews">
 <h2>⭐ Reseñas de clientes</h2>
 
 <div class="review-grid">
 
 <div class="review">
+<div class="review-img">
 <img src="cliente1.jpg">
+</div>
 <div class="review-content">
 <div class="stars">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
+★★★★★
 </div>
 <p>Excelente calidad y servicio, muy recomendados.</p>
 </div>
 </div>
 
 <div class="review">
+<div class="review-img">
 <img src="cliente2.jpg">
+</div>
 <div class="review-content">
 <div class="stars">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star-half-alt"></i>
+★★★★☆
 </div>
 <p>Entrega rápida y muy buena atención.</p>
 </div>
 </div>
 
 <div class="review">
+<div class="review-img">
 <img src="cliente3.jpg">
+</div>
 <div class="review-content">
 <div class="stars">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
+★★★★★
 </div>
 <p>Todo llegó perfecto, volveré a comprar.</p>
 </div>
