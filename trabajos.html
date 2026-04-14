@@ -4,16 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Trabajos - Impresiones Compás</title>
+<title>Impresiones Compás</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 font-family:'Segoe UI',sans-serif;
@@ -26,144 +22,147 @@ width:100%;
 padding:15px 40px;
 display:flex;
 align-items:center;
+justify-content:space-between;
 background:#1f3c88;
 color:white;
 box-shadow:0 5px 20px rgba(0,0,0,0.2);
 }
 
-.navbar img{
-height:45px;
-margin-right:10px;
+.navbar img{height:45px;}
+
+.menu a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+font-weight:500;
 }
 
-/* CONTENIDO */
-.container{
+/* HERO */
+.hero{
+text-align:center;
 padding:60px 20px;
-max-width:1200px;
+}
+
+.hero h1{
+font-size:40px;
+color:#1f3c88;
+}
+
+.hero p{
+color:#555;
+margin-top:10px;
+}
+
+/* PRODUCTOS */
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+padding:40px;
+max-width:1100px;
 margin:auto;
 }
 
-h1{
-text-align:center;
-font-size:36px;
-letter-spacing:4px;
-color:#1f3c88;
-margin-bottom:15px;
-}
-
-.sub{
-text-align:center;
-color:#555;
-margin-bottom:50px;
-}
-
-/* SECCIONES */
-.section{
-margin-bottom:70px;
-opacity:0;
-transform:translateY(40px);
-transition:1s;
-}
-
-.section.show{
-opacity:1;
-transform:translateY(0);
-}
-
-.section h2{
-color:#1f3c88;
-margin-bottom:20px;
-letter-spacing:2px;
-}
-
-/* CARRUSEL */
-.carousel{
-position:relative;
-}
-
-.carousel-track{
-display:flex;
-gap:20px;
-overflow-x:auto;
-scroll-behavior:smooth;
-padding:20px 0;
-}
-
-/* TARJETAS */
 .card{
-min-width:260px;
-height:260px;
-border-radius:15px;
+background:white;
+border-radius:20px;
 overflow:hidden;
-transition:.4s;
-cursor:pointer;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+transition:.3s;
+text-align:center;
 }
 
-.card img,
-.card video{
+.card img{
 width:100%;
-height:100%;
+height:200px;
 object-fit:cover;
 }
 
-.card:hover{
-transform:scale(1.15);
-z-index:5;
-box-shadow:0 20px 40px rgba(0,0,0,.4);
-}
+.card h3{margin:15px 0;color:#1f3c88;}
+.card p{color:#555;padding:0 15px;}
 
-/* FLECHAS */
-.arrow{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-background:rgba(255,255,255,0.9);
+.card button{
+margin:15px;
+padding:10px 20px;
 border:none;
-width:45px;
-height:45px;
-border-radius:50%;
-font-size:25px;
+border-radius:30px;
+background:#1f3c88;
+color:white;
 cursor:pointer;
-opacity:0;
-transition:.3s;
 }
 
-.carousel:hover .arrow{
-opacity:1;
+.card:hover{
+transform:translateY(-10px);
 }
 
-.arrow-left{left:-10px;}
-.arrow-right{right:-10px;}
-
-/* LIGHTBOX */
-.lightbox{
+/* MODAL PRODUCTO */
+.modal{
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,.9);
-display:flex;
+background:rgba(0,0,0,.7);
+display:none;
 align-items:center;
 justify-content:center;
-opacity:0;
-pointer-events:none;
-transition:.3s;
 z-index:1000;
 }
 
-.lightbox img{
-max-width:90%;
-max-height:90%;
-border-radius:10px;
+.modal-content{
+background:white;
+padding:30px;
+border-radius:15px;
+width:90%;
+max-width:400px;
 }
 
-.lightbox.show{
-opacity:1;
-pointer-events:auto;
+.modal-content h2{
+color:#1f3c88;
+margin-bottom:15px;
 }
 
-/* WHATSAPP */
+.modal-content label{
+display:block;
+margin-top:10px;
+}
+
+.modal-content input,
+.modal-content select{
+width:100%;
+padding:8px;
+margin-top:5px;
+}
+
+.modal-content button{
+margin-top:15px;
+width:100%;
+padding:12px;
+border:none;
+border-radius:30px;
+background:#1f3c88;
+color:white;
+cursor:pointer;
+}
+
+.whatsapp-btn{
+display:block;
+text-align:center;
+margin-top:10px;
+color:#25d366;
+text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+margin-top:60px;
+padding:25px;
+background:#1f3c88;
+color:white;
+text-align:center;
+}
+
+/* WHATSAPP FLOAT */
 .whatsapp{
 position:fixed;
 bottom:25px;
@@ -180,152 +179,102 @@ font-size:30px;
 text-decoration:none;
 box-shadow:0 10px 25px rgba(0,0,0,.3);
 }
-
-/* BOTON */
-.back-btn{
-display:block;
-margin:40px auto;
-padding:14px 45px;
-border-radius:50px;
-text-decoration:none;
-font-weight:600;
-background:linear-gradient(135deg,#1f3c88,#3c78d8);
-color:white;
-box-shadow:0 10px 25px rgba(31,60,136,0.3);
-width:max-content;
-}
-
-.back-btn:hover{
-transform:translateY(-4px);
-}
-
-/* FOOTER */
-footer{
-margin-top:60px;
-padding:25px;
-background:#1f3c88;
-color:white;
-text-align:center;
-}
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <div class="navbar">
+<div style="display:flex;align-items:center;">
 <img src="logo.png">
-<h2>IMPRESIONES COMPÁS</h2>
+<h2 style="margin-left:10px;">IMPRESIONES COMPÁS</h2>
 </div>
 
-<div class="container">
+<div class="menu">
+<a href="#">Inicio</a>
+<a href="#">Productos</a>
+<a href="#">Contacto</a>
+</div>
+</div>
 
-<h1>NUESTROS TRABAJOS</h1>
-<p class="sub">Algunos de nuestros trabajos de impresión</p>
+<!-- HERO -->
+<div class="hero">
+<h1>Compra tus impresiones en línea</h1>
+<p>Selecciona tu producto, sube tu diseño y paga fácil</p>
+</div>
 
-<!-- STICKERS -->
-<div class="section">
-<h2>STICKERS</h2>
-<div class="carousel">
-<button class="arrow arrow-left" onclick="move(this,-1)">❮</button>
+<!-- PRODUCTOS -->
+<div class="products">
 
-<div class="carousel-track">
-<div class="card"><img src="stickers.jpg"></div>
-<div class="card"><img src="s2.jpg"></div>
-<div class="card"><img src="s3.jpg"></div>
 <div class="card">
-<video muted loop class="auto-video"><source src="video1.mp4"></video>
-</div>
-</div>
-
-<button class="arrow arrow-right" onclick="move(this,1)">❯</button>
-</div>
+<img src="lona1.jpg">
+<h3>Lonas</h3>
+<p>Impresión en lona resistente</p>
+<button onclick="abrirModal('Lona')">VER MÁS</button>
 </div>
 
-<!-- LONAS (ARREGLADO) -->
-<div class="section">
-<h2>LONAS</h2>
-<div class="carousel">
-<button class="arrow arrow-left" onclick="move(this,-1)">❮</button>
-
-<div class="carousel-track">
-<div class="card"><img src="lona1.jpg"></div>
 <div class="card">
-<video muted loop class="auto-video"><source src="video1.mp4"></video>
+<img src="stickers.jpg">
+<h3>Stickers</h3>
+<p>Vinil adhesivo personalizado</p>
+<button onclick="abrirModal('Sticker')">VER MÁS</button>
 </div>
-<div class="card"><img src="lona3.jpg"></div>
-<div class="card">
-<video muted loop class="auto-video"><source src="video4.mp4"></video>
-</div>
-</div>
-
-<button class="arrow arrow-right" onclick="move(this,1)">❯</button>
-</div>
-</div>
-
-<a href="index.html" class="back-btn">⬅ REGRESAR</a>
 
 </div>
 
-<div class="lightbox" id="lightbox">
-<img id="lightbox-img">
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-content">
+
+<h2 id="productoTitulo"></h2>
+
+<label>Medida</label>
+<select>
+<option>1x1</option>
+<option>2x1</option>
+</select>
+
+<label>Cantidad</label>
+<input type="number" value="1">
+
+<label>Subir diseño</label>
+<input type="file">
+
+<button onclick="pagar()">PAGAR</button>
+
+<a href="https://wa.me/5218781280497" class="whatsapp-btn">
+¿No tienes diseño? Cotiza por WhatsApp
+</a>
+
+</div>
 </div>
 
+<!-- WHATSAPP -->
 <a href="https://wa.me/5218781280497" class="whatsapp">
 <i class="fab fa-whatsapp"></i>
 </a>
 
+<!-- FOOTER -->
 <footer>© 2026 Impresiones Compás</footer>
 
 <script>
-// MOVER CARRUSEL
-function move(btn, dir){
-const track = btn.parentElement.querySelector(".carousel-track");
-track.scrollBy({left: dir * 320, behavior:"smooth"});
+function abrirModal(producto){
+document.getElementById("modal").style.display="flex";
+document.getElementById("productoTitulo").innerText = producto;
 }
 
-// LIGHTBOX
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-
-document.querySelectorAll(".card img").forEach(img=>{
-img.onclick = ()=>{
-lightbox.classList.add("show");
-lightboxImg.src = img.src;
-};
-});
-
-lightbox.onclick = ()=>{
-lightbox.classList.remove("show");
-};
-
-// AUTOPLAY VIDEO
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.play();
-}else{
-entry.target.pause();
+window.onclick = function(e){
+if(e.target.id === "modal"){
+document.getElementById("modal").style.display="none";
 }
-});
-});
-
-document.querySelectorAll(".auto-video").forEach(v=>{
-observer.observe(v);
-});
-
-// ANIMACION SECCIONES
-const obs = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
 }
-});
-});
 
-document.querySelectorAll(".section").forEach(sec=>{
-obs.observe(sec);
-});
+function pagar(){
+alert("Aquí conectarías Mercado Pago");
+}
 </script>
 
 </body>
 </html>
+
