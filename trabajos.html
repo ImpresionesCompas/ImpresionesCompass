@@ -45,7 +45,7 @@ font-size:38px;
 color:#1f3c88;
 }
 
-/* QUIENES SOMOS (MEJORADO) */
+/* QUIENES SOMOS */
 .about{
 display:flex;
 align-items:center;
@@ -173,6 +173,68 @@ font-size:20px;
 .arrow-left{left:-10px;}
 .arrow-right{right:-10px;}
 
+/* RESEÑAS */
+.reviews{
+padding:60px 20px;
+text-align:center;
+}
+
+.reviews h2{
+color:#1f3c88;
+margin-bottom:30px;
+}
+
+.review-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+max-width:1100px;
+margin:auto;
+}
+
+.review{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.review i{
+color:#fbc02d;
+margin-bottom:10px;
+}
+
+.review p{
+color:#555;
+}
+
+/* CTA */
+.cta{
+margin:60px auto;
+max-width:900px;
+padding:50px;
+text-align:center;
+background:linear-gradient(135deg,#1f3c88,#3c78d8);
+color:white;
+border-radius:25px;
+box-shadow:0 20px 50px rgba(0,0,0,.3);
+}
+
+.cta h2{
+font-size:28px;
+margin-bottom:15px;
+}
+
+.cta a{
+display:inline-block;
+margin-top:20px;
+padding:12px 30px;
+background:#25d366;
+color:white;
+border-radius:30px;
+text-decoration:none;
+}
+
 /* FOOTER */
 footer{
 margin-top:60px;
@@ -224,35 +286,26 @@ text-decoration:none;
 
 <!-- QUIENES SOMOS -->
 <div class="about">
-
 <div class="about-text">
 <p style="opacity:.8; letter-spacing:2px;">IMPRESIONES COMPÁS</p>
 <h2>¿Quiénes somos?</h2>
 <p>
 Somos una imprenta dedicada a ofrecer soluciones de impresión de alta calidad.
-Trabajamos con materiales resistentes y diseños personalizados para ayudarte
-a destacar tu negocio o proyecto. Nuestro objetivo es brindarte rapidez,
-calidad y atención personalizada.
+Trabajamos con materiales resistentes y diseños personalizados.
 </p>
 </div>
-
 <div class="about-img">
 <img src="imprenta.jpg">
 </div>
-
 </div>
 
-<!-- PRODUCTOS MÁS VENDIDOS -->
+<!-- PRODUCTOS -->
 <div class="carousel-section">
-
 <h2>🔥 Productos más vendidos</h2>
-
 <div class="carousel">
-
 <button class="arrow arrow-left" onclick="move(-1)">❮</button>
 
 <div class="carousel-track" id="track">
-
 <div class="card">
 <img src="lona1.jpg">
 <h3>Lonas</h3>
@@ -266,20 +319,42 @@ calidad y atención personalizada.
 <p>Desde $100</p>
 <a href="https://wa.me/5218781280497?text=Hola,%20quiero%20cotizar%20stickers">Cotizar</a>
 </div>
-
-<div class="card">
-<img src="tarjetas.jpg">
-<h3>Tarjetas</h3>
-<p>Desde $120</p>
-<a href="https://wa.me/5218781280497?text=Hola,%20quiero%20cotizar%20tarjetas">Cotizar</a>
-</div>
-
 </div>
 
 <button class="arrow arrow-right" onclick="move(1)">❯</button>
-
+</div>
 </div>
 
+<!-- RESEÑAS -->
+<div class="reviews">
+<h2>⭐ Reseñas de clientes</h2>
+
+<div class="review-grid">
+<div class="review">
+<i class="fas fa-star"></i>
+<p>Excelente calidad y muy buen servicio.</p>
+</div>
+
+<div class="review">
+<i class="fas fa-star"></i>
+<p>Me entregaron rápido y justo como lo pedí.</p>
+</div>
+
+<div class="review">
+<i class="fas fa-star"></i>
+<p>Muy recomendados, volveré a comprar.</p>
+</div>
+</div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>¿Te interesó alguno de nuestros productos?</h2>
+<p>Mándanos mensaje y con gusto te atenderemos</p>
+
+<a href="https://wa.me/5218781280497">
+Enviar mensaje por WhatsApp
+</a>
 </div>
 
 <!-- WHATSAPP -->
