@@ -1,105 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Productos | Impresiones Compás</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#eef4ff,#dbe9ff,#c6dcff);}
-.navbar{padding:15px 40px;display:flex;justify-content:space-between;align-items:center;background:#1f3c88;color:white;}
-.navbar img{height:45px;}
-.menu a{color:white;margin-left:20px;text-decoration:none;}
-.hero{text-align:center;padding:50px 20px;}
-.hero h1{font-size:40px;color:#1f3c88;}
-.hero p{color:#444;margin-top:10px;}
-.products-section{padding:40px 20px;max-width:1200px;margin:auto;}
-.products-section h2{text-align:center;color:#1f3c88;margin-bottom:30px;}
-.carousel{position:relative;margin-bottom:60px;}
-.carousel-title{font-size:24px;color:#1f3c88;margin:20px 0;}
-.carousel-track{display:flex;gap:20px;overflow-x:auto;scroll-behavior:smooth;padding:20px 10px;}
-.carousel-track::-webkit-scrollbar{display:none;}
-.card{min-width:260px;background:white;border-radius:22px;box-shadow:0 10px 25px rgba(0,0,0,.15);text-align:center;transition:.3s;overflow:hidden;}
-.card img{width:100%;height:180px;object-fit:cover;}
-.card h3{color:#1f3c88;margin:15px 0 8px;}
-.card p{padding:0 15px;color:#666;font-size:14px;min-height:50px;}
-.card a{display:inline-block;margin:18px;padding:10px 24px;background:#25d366;color:white;text-decoration:none;border-radius:30px;}
-.card:hover{transform:translateY(-8px) scale(1.03);}
-.arrow{position:absolute;top:50%;transform:translateY(-50%);background:white;border:none;width:45px;height:45px;border-radius:50%;cursor:pointer;font-size:20px;box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:2;}
-.arrow-left{left:-5px;} .arrow-right{right:-5px;}
-footer{margin-top:50px;padding:25px;background:#1f3c88;color:white;text-align:center;}
-</style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Productos y servicios | Impresiones Compás</title>
+<meta name="description" content="Catálogo de lonas, vinil, rotulación, stickers, papelería, textiles y personalizados en Piedras Negras.">
+<link rel="canonical" href="https://impresionescompas.github.io/ImpresionesCompass/productos.html">
+<link rel="icon" href="logo.png"><link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="navbar">
-<div style="display:flex;align-items:center;">
-<img src="logo.png"><h2 style="margin-left:10px;">IMPRESIONES COMPÁS</h2>
-</div>
-<div class="menu">
-<a href="index.html">Inicio</a>
-<a href="productos.html">Productos</a>
-<a href="contactanos.html">Contacto</a>
-</div>
-</div>
-
-<div class="hero">
-<h1>Nuestros Productos</h1>
-<p>Descubre todos los servicios de impresión y personalización que tenemos para ti</p>
-</div>
-
-<div class="products-section">
-<h2>Catálogo de productos</h2>
-
-<div class="carousel">
-<h3 class="carousel-title">Publicidad y rotulación</h3>
-<button class="arrow arrow-left" onclick="move('track1',-1)">❮</button>
-<div class="carousel-track" id="track1">
-<div class="card"><img src="coroplast.png"><h3>Figuras en cloroplast</h3><p>Ideales para eventos y promociones.</p><a href="https://wa.me/5218781280497">Cotizar</a></div>
-<div class="card"><img src="VINIL.png"><h3>Vinil de impresión</h3><p>Impresión para interiores y exteriores.</p><a href="https://wa.me/5218781280497">Cotizar</a></div>
-<div class="card"><img src="micro.png"><h3>Microperforado</h3><p>Publicidad en cristales.</p><a href="https://wa.me/5218781280497">Cotizar</a></div>
-<div class="card"><img src="corte.png"><h3>Vinil de corte</h3><p>Diseños para escaparates.</p><a href="https://wa.me/5218781280497">Cotizar</a></div>
-<div class="card"><img src="ChatGPT Image 17 abr 2026, 17_47_36.png"><h3>Lonas</h3><p>Lonas resistentes para negocio.</p><a href="https://wa.me/5218781280497">Cotizar</a></div>
-<div class="card"><img src="rotulacion.png"><h3>Rotulación</h3><p>Personalización vehicular y comercial.</p><a href="https://wa.me/5218781280497">Cotizar</a></div>
-</div>
-<button class="arrow arrow-right" onclick="move('track1',1)">❯</button>
-</div>
-
-<div class="carousel">
-<h3 class="carousel-title">Papelería y oficina</h3>
-<button class="arrow arrow-left" onclick="move('track2',-1)">❮</button>
-<div class="carousel-track" id="track2">
-<div class="card"><img src="COPIADO.jpg"><h3>Centro de copiado</h3><p>Copias e impresiones rápidas.</p><a href="https://wa.me/5218781280497">Cotizar</a></div>
-<div class="card"><img src="stickers.png"><h3>Stickers</h3><p>Calcomanías personalizadas.</p><a href="https://wa.me/5218781280497">Cotizar</a></div>
-<div class="card"><img src="sello.png"><h3>Sellos</h3><p>Sellos automáticos.</p><a href="https://wa.me/5218781280497">Cotizar</a></div>
-<div class="card"><img src="ChatGPT Image 15 abr 2026, 17_36_35.png"><h3>Tarjetas</h3><p>Tarjetas profesionales.</p><a href="https://wa.me/5218781280497">Cotizar</a></div>
-<div class="card"><img src="ETIQUETAS.png"><h3>Etiquetas</h3><p>Etiquetas para productos.</p><a href="https://wa.me/5218781280497">Cotizar</a></div>
-<div class="card"><img src="señalamiento.jpg"><h3>Señalamiento</h3><p>Señales informativas.</p><a href="https://wa.me/5218781280497">Cotizar</a></div>
-</div>
-<button class="arrow arrow-right" onclick="move('track2',1)">❯</button>
-</div>
-
-<div class="carousel">
-<h3 class="carousel-title">Personalizados y textiles</h3>
-<button class="arrow arrow-left" onclick="move('track3',-1)">❮</button>
-<div class="carousel-track" id="track3">
-<div class="card"><img src="bordado.jpg.png"><h3>Bordado</h3><p>Bordado profesional.</p><a href="https://wa.me/5218781280497">Cotizar</a></div>
-<div class="card"><img src="camisa.png"><h3>Playeras</h3><p>Playeras personalizadas.</p><a href="https://wa.me/5218781280497">Cotizar</a></div>
-<div class="card"><img src="taza.jpg.png"><h3>Tazas</h3><p>Tazas sublimadas.</p><a href="https://wa.me/5218781280497">Cotizar</a></div>
-<div class="card"><img src="iman.png"><h3>Imanes</h3><p>Imanes promocionales.</p><a href="https://wa.me/5218781280497">Cotizar</a></div>
-<div class="card"><img src="laser.png"><h3>Grabado láser</h3><p>Grabado de precisión.</p><a href="https://wa.me/5218781280497">Cotizar</a></div>
-<div class="card"><img src="dtfuv.png"><h3>DTF UV</h3><p>Impresión premium.</p><a href="https://wa.me/5218781280497">Cotizar</a></div>
-</div>
-<button class="arrow arrow-right" onclick="move('track3',1)">❯</button>
-</div>
-</div>
-
-<footer>© 2026 Impresiones Compás</footer>
-<script>
-function move(trackId,dir){
- document.getElementById(trackId).scrollBy({left:dir*320,behavior:'smooth'});
-}
-</script>
-</body>
-</html>
-
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="header"><nav class="nav" aria-label="Navegación principal"><a class="brand" href="index.html"><img src="logo.png" alt=""><span>Impresiones Compás</span></a><div class="links"><a href="index.html">Inicio</a><a href="productos.html" aria-current="page">Productos</a><a href="trabajos.html">Nosotros</a><a href="contactanos.html" class="quote">Cotizar</a></div></nav></header>
+<main id="contenido">
+<section class="page-hero"><div class="wrap"><p class="eyebrow">Catálogo</p><h1>Todo lo que podemos crear contigo</h1><p class="lead">Elige una opción para iniciar una cotización. Si no encuentras exactamente lo que buscas, cuéntanos tu idea.</p><a class="btn whatsapp" href="https://wa.me/5218781280497?text=Hola%2C%20necesito%20orientaci%C3%B3n%20para%20un%20proyecto" target="_blank" rel="noopener">Pedir orientación</a></div></section>
+<section class="section white"><div class="wrap">
+<div class="category" id="publicidad"><h2 class="category-title">Publicidad y rotulación</h2><div class="grid grid-3">
+<article class="card product"><img class="card-media" src="coroplast.png" alt="Figura impresa en coroplast" loading="lazy"><div class="card-body"><h3>Figuras en coroplast</h3><p>Una opción ligera y versátil para eventos, promociones y señalización.</p><a class="btn secondary" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20cotizar%20coroplast" target="_blank" rel="noopener">Cotizar</a></div></article>
+<article class="card product"><img class="card-media" src="VINIL.png" alt="Vinil impreso" loading="lazy"><div class="card-body"><h3>Vinil impreso</h3><p>Gráficos a color para interiores, exteriores, aparadores y superficies.</p><a class="btn secondary" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20cotizar%20vinil%20impreso" target="_blank" rel="noopener">Cotizar</a></div></article>
+<article class="card product"><img class="card-media" src="micro.png" alt="Vinil microperforado en cristal" loading="lazy"><div class="card-body"><h3>Microperforado</h3><p>Publicidad para cristales que conserva visibilidad desde el interior.</p><a class="btn secondary" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20cotizar%20microperforado" target="_blank" rel="noopener">Cotizar</a></div></article>
+<article class="card product"><img class="card-media" src="corte.png" alt="Letras en vinil de corte" loading="lazy"><div class="card-body"><h3>Vinil de corte</h3><p>Letras y gráficos limpios para escaparates, muros y señalización.</p><a class="btn secondary" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20cotizar%20vinil%20de%20corte" target="_blank" rel="noopener">Cotizar</a></div></article>
+<article class="card product"><img class="card-media" src="ChatGPT Image 17 abr 2026, 17_47_36.png" alt="Lona publicitaria" loading="lazy"><div class="card-body"><h3>Lonas</h3><p>Comunicación de gran formato para negocios, eventos y promociones.</p><a class="btn secondary" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20cotizar%20una%20lona" target="_blank" rel="noopener">Cotizar</a></div></article>
+<article class="card product"><img class="card-media" src="rotulacion.png" alt="Rotulación comercial" loading="lazy"><div class="card-body"><h3>Rotulación</h3><p>Aplicación de gráficos para vehículos, locales y espacios comerciales.</p><a class="btn secondary" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20cotizar%20rotulaci%C3%B3n" target="_blank" rel="noopener">Cotizar</a></div></article>
+</div></div>
+<div class="category" id="papeleria"><h2 class="category-title">Papelería e impresión</h2><div class="grid grid-3">
+<article class="card product"><img class="card-media" src="COPIADO.jpg" alt="Centro de copiado" loading="lazy"><div class="card-body"><h3>Centro de copiado</h3><p>Copias e impresiones para tus actividades personales, escolares o de oficina.</p><a class="btn secondary" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20cotizar%20copias%20o%20impresiones" target="_blank" rel="noopener">Cotizar</a></div></article>
+<article class="card product"><img class="card-media" src="stickers.png" alt="Stickers personalizados" loading="lazy"><div class="card-body"><h3>Stickers</h3><p>Calcomanías personalizadas para marcas, regalos y empaques.</p><a class="btn secondary" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20cotizar%20stickers" target="_blank" rel="noopener">Cotizar</a></div></article>
+<article class="card product"><img class="card-media" src="sello.png" alt="Sello automático personalizado" loading="lazy"><div class="card-body"><h3>Sellos</h3><p>Sellos automáticos para oficina, negocio y uso profesional.</p><a class="btn secondary" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20cotizar%20un%20sello" target="_blank" rel="noopener">Cotizar</a></div></article>
+<article class="card product"><img class="card-media" src="ChatGPT Image 15 abr 2026, 17_36_35.png" alt="Tarjetas de presentación" loading="lazy"><div class="card-body"><h3>Tarjetas</h3><p>Tarjetas para presentar tu negocio con una imagen profesional.</p><a class="btn secondary" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20cotizar%20tarjetas" target="_blank" rel="noopener">Cotizar</a></div></article>
+<article class="card product"><img class="card-media" src="ETIQUETAS.png" alt="Etiquetas impresas" loading="lazy"><div class="card-body"><h3>Etiquetas</h3><p>Etiquetas para identificar y presentar mejor tus productos.</p><a class="btn secondary" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20cotizar%20etiquetas" target="_blank" rel="noopener">Cotizar</a></div></article>
+<article class="card product"><img class="card-media" src="señalamiento.jpg" alt="Señalamiento informativo" loading="lazy"><div class="card-body"><h3>Señalamiento</h3><p>Señales informativas y preventivas para espacios y negocios.</p><a class="btn secondary" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20cotizar%20se%C3%B1alamiento" target="_blank" rel="noopener">Cotizar</a></div></article>
+</div></div>
+<div class="category" id="personalizados"><h2 class="category-title">Personalizados y textiles</h2><div class="grid grid-3">
+<article class="card product"><img class="card-media" src="bordado.jpg.png" alt="Bordado profesional" loading="lazy"><div class="card-body"><h3>Bordado</h3><p>Personalización textil para uniformes, equipos y proyectos especiales.</p><a class="btn secondary" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20cotizar%20bordado" target="_blank" rel="noopener">Cotizar</a></div></article>
+<article class="card product"><img class="card-media" src="camisa.png" alt="Playera personalizada" loading="lazy"><div class="card-body"><h3>Playeras</h3><p>Playeras personalizadas para marcas, grupos, eventos y regalos.</p><a class="btn secondary" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20cotizar%20playeras" target="_blank" rel="noopener">Cotizar</a></div></article>
+<article class="card product"><img class="card-media" src="taza.jpg.png" alt="Taza personalizada" loading="lazy"><div class="card-body"><h3>Tazas</h3><p>Tazas sublimadas con diseños, nombres o identidad de marca.</p><a class="btn secondary" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20cotizar%20tazas" target="_blank" rel="noopener">Cotizar</a></div></article>
+<article class="card product"><img class="card-media" src="iman.png" alt="Imán promocional" loading="lazy"><div class="card-body"><h3>Imanes</h3><p>Imanes promocionales para mantener tu marca siempre visible.</p><a class="btn secondary" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20cotizar%20imanes" target="_blank" rel="noopener">Cotizar</a></div></article>
+<article class="card product"><img class="card-media" src="laser.png" alt="Grabado láser" loading="lazy"><div class="card-body"><h3>Grabado láser</h3><p>Personalización de precisión para regalos y artículos promocionales.</p><a class="btn secondary" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20cotizar%20grabado%20l%C3%A1ser" target="_blank" rel="noopener">Cotizar</a></div></article>
+<article class="card product"><img class="card-media" src="dtfuv.png" alt="Impresión DTF UV" loading="lazy"><div class="card-body"><h3>DTF UV</h3><p>Impresión de alta definición para personalizar superficies rígidas.</p><a class="btn secondary" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20cotizar%20DTF%20UV" target="_blank" rel="noopener">Cotizar</a></div></article>
+</div></div>
+</div></section>
+<section class="section"><div class="wrap"><div class="band"><div><h2>¿Necesitas algo diferente?</h2><p>Envíanos una foto de referencia, medidas y cantidad para orientarte.</p></div><a class="btn whatsapp" href="https://wa.me/5218781280497?text=Hola%2C%20tengo%20un%20proyecto%20especial%20para%20cotizar" target="_blank" rel="noopener">Consultar proyecto</a></div></div></section>
+</main>
+<a class="float" href="https://wa.me/5218781280497" target="_blank" rel="noopener" aria-label="Cotizar por WhatsApp">WA</a>
+<footer class="footer"><div class="wrap"><div class="footer-grid"><div><h3>Impresiones Compás</h3><p>Impresión, publicidad y personalizados en Piedras Negras, Coahuila.</p></div><div><h3>Explora</h3><div class="footer-links"><a href="index.html">Inicio</a><a href="trabajos.html">Nosotros</a><a href="contactanos.html">Contacto</a></div></div><div><h3>Contacto</h3><p>C. Mar Muerto 923, Año 2000</p><a href="tel:+528781280497">878 128 0497</a></div></div><div class="footer-bottom">© 2026 Impresiones Compás.</div></div></footer>
+</body></html>
