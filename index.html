@@ -19,7 +19,7 @@ html.intro-open,html.intro-open body{overflow:hidden}body{margin:0}
 .site-intro:before,.site-intro:after{content:"";position:absolute;z-index:-1;top:-24%;width:clamp(110px,16vw,230px);height:148%;border-radius:50%;filter:blur(24px);opacity:.58;background:linear-gradient(180deg,transparent 5%,#00e5ff 28%,#1769ff 53%,#9b4dff 76%,transparent 96%);animation:neonSideFlow 1.9s ease-in-out infinite alternate}
 .site-intro:before{left:-3%;transform:rotate(-7deg)}.site-intro:after{right:-3%;transform:rotate(7deg);animation-direction:alternate-reverse;animation-delay:-.7s}
 .site-intro.is-leaving{opacity:0;visibility:hidden;pointer-events:none}.intro-inner{position:relative;z-index:2;display:grid;justify-items:center;align-content:center;gap:20px;padding:34px;text-align:center}
-.intro-logo{display:block;width:clamp(154px,22vw,210px);height:auto;aspect-ratio:1;object-fit:contain;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;filter:drop-shadow(0 0 20px rgba(0,213,255,.28)) drop-shadow(0 22px 36px rgba(0,0,0,.36));image-rendering:auto;animation:introBounce .62s cubic-bezier(.3,.75,.35,1) 2}
+.intro-logo{display:block;width:clamp(174px,24vw,230px);height:auto;aspect-ratio:1;object-fit:contain;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;filter:drop-shadow(0 0 1px rgba(255,255,255,.92)) drop-shadow(0 0 18px rgba(0,213,255,.32)) drop-shadow(0 22px 36px rgba(0,0,0,.34));image-rendering:auto;animation:introBounce .62s cubic-bezier(.3,.75,.35,1) 2}
 .intro-loading{margin:0;color:#effcff;font:800 .84rem/1.4 Inter,system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;text-shadow:0 0 16px rgba(0,229,255,.52)}
 @keyframes introBounce{0%,100%{transform:translateY(0) scale(1)}42%{transform:translateY(-18px) scale(1.025)}68%{transform:translateY(2px) scale(.995)}}
 @keyframes neonSideFlow{0%{translate:0 -7%;scale:.88 1}100%{translate:0 7%;scale:1.12 1.04}}
@@ -32,7 +32,7 @@ html.intro-open,html.intro-open body{overflow:hidden}body{margin:0}
 <body>
   <div class="site-intro" role="status" aria-live="polite" aria-label="Cargando Impresiones Compás">
     <div class="intro-inner">
-      <img class="intro-logo" src="logo.png?v=2" alt="Impresiones Compás" width="1024" height="1024" fetchpriority="high" decoding="sync">
+      <img class="intro-logo" src="logo-loader-clean.png?v=1" alt="Impresiones Compás" width="768" height="768" fetchpriority="high" decoding="sync">
       <p class="intro-loading">Cargando</p>
     </div>
   </div>

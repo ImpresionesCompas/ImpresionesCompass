@@ -325,7 +325,7 @@ linear-gradient(145deg,#020814 0%,#071a30 52%,#092a46 100%);opacity:1;visibility
 .site-intro.is-leaving{opacity:0;visibility:hidden;pointer-events:none}
 .intro-inner{position:relative;z-index:2;display:grid;justify-items:center;align-content:center;gap:20px;padding:34px;text-align:center}
 .intro-inner:before{content:"";position:absolute;z-index:-1;inset:18% -22%;border-radius:50%;background:rgba(29,134,190,.16);filter:blur(42px);animation:introAura 1.3s ease-in-out infinite alternate}
-.intro-logo{display:block;width:clamp(154px,22vw,210px);height:auto;aspect-ratio:1;object-fit:contain;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;filter:drop-shadow(0 0 20px rgba(0,213,255,.28)) drop-shadow(0 22px 36px rgba(0,0,0,.36));image-rendering:auto;animation:introBounce .62s cubic-bezier(.3,.75,.35,1) 2}
+.intro-logo{display:block;width:clamp(174px,24vw,230px);height:auto;aspect-ratio:1;object-fit:contain;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;filter:drop-shadow(0 0 1px rgba(255,255,255,.92)) drop-shadow(0 0 18px rgba(0,213,255,.32)) drop-shadow(0 22px 36px rgba(0,0,0,.34));image-rendering:auto;animation:introBounce .62s cubic-bezier(.3,.75,.35,1) 2}
 .intro-loading{margin:0;color:#effcff;font-size:.84rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;text-shadow:0 0 16px rgba(0,229,255,.52)}
 .intro-loading:after{content:"";display:inline-block;width:1.5em;text-align:left;animation:loadingDots 1s steps(4,end) infinite}
 @keyframes introBounce{0%,100%{transform:translateY(0) scale(1)}42%{transform:translateY(-18px) scale(1.025)}68%{transform:translateY(2px) scale(.995)}}
