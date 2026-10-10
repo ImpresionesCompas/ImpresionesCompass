@@ -129,10 +129,13 @@ html.intro-open,html.intro-open body{overflow:hidden}body{margin:0}
 
   <section class="section white" aria-labelledby="resena">
     <div class="wrap review-layout">
-      <div><p class="eyebrow">Tu experiencia</p><h2 id="resena">Califica nuestro servicio</h2><p class="lead">Sólo necesitamos tu nombre y una calificación del 1 al 5. Tu valoración aparecerá debajo al agregarla.</p></div>
+      <div><p class="eyebrow">Tu experiencia</p><h2 id="resena">Califica nuestro servicio</h2><p class="lead">Comparte tu nombre, una calificación del 1 al 5 y un comentario sobre tu experiencia.</p></div>
       <form class="panel review-form" id="review-form">
         <label>Nombre
           <input id="review-name" name="nombre" type="text" maxlength="60" autocomplete="name" required placeholder="Tu nombre">
+        </label>
+        <label>Comentario
+          <textarea id="review-comment" name="comentario" rows="4" maxlength="300" required placeholder="Cuéntanos cómo fue tu experiencia"></textarea>
         </label>
         <fieldset>
           <legend>Calificación</legend>
@@ -144,11 +147,11 @@ html.intro-open,html.intro-open body{overflow:hidden}body{margin:0}
             <input type="radio" id="star-5" name="estrellas" value="5"><label for="star-5" data-value="5" aria-label="5 estrellas">★</label>
           </div>
         </fieldset>
-        <button class="btn primary" type="submit">Agregar calificación</button>
+        <button class="btn primary" type="submit">Publicar reseña</button>
       </form>
     </div>
     <div class="wrap reviews-board">
-      <div class="reviews-board-head"><div><p class="eyebrow">Calificaciones</p><h3>Opiniones agregadas</h3></div><p>Estas calificaciones se guardan únicamente en este navegador.</p></div>
+      <div class="reviews-board-head"><div><p class="eyebrow">Reseñas</p><h3>Opiniones de nuestros clientes</h3></div><p>Estas reseñas se guardan únicamente en este navegador.</p></div>
       <div class="reviews-list" id="reviews-list" aria-live="polite"></div>
     </div>
   </section>

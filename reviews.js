@@ -46,6 +46,12 @@
       stars.setAttribute("aria-label", `${review.rating} de 5 estrellas`);
       stars.textContent = "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
       card.append(name, stars);
+      if (review.comment) {
+        const comment = document.createElement("p");
+        comment.className = "review-comment";
+        comment.textContent = review.comment;
+        card.append(comment);
+      }
       list.append(card);
     });
   };
@@ -61,11 +67,12 @@
     event.preventDefault();
     if (!form.reportValidity()) return;
     const name = document.querySelector("#review-name").value.trim();
+    const comment = document.querySelector("#review-comment").value.trim();
     const selected = form.querySelector('input[name="estrellas"]:checked');
-    if (!name || !selected) return;
+    if (!name || !comment || !selected) return;
 
     const reviews = readReviews();
-    reviews.unshift({ name, rating: Number(selected.value) });
+    reviews.unshift({ name, rating: Number(selected.value), comment });
     saveReviews(reviews);
     form.reset();
     labels.forEach((label) => label.classList.remove("is-selected"));
