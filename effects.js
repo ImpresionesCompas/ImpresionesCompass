@@ -47,3 +47,27 @@
 
   updateMotion();
 })();
+
+/* Intro breve de portada */
+(() => {
+  const intro = document.querySelector(".site-intro");
+  if (!intro) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.documentElement.classList.add("intro-open");
+
+  const dismissIntro = () => {
+    if (intro.classList.contains("is-leaving")) return;
+    intro.classList.add("is-leaving");
+    intro.setAttribute("aria-hidden", "true");
+    document.documentElement.classList.remove("intro-open");
+    window.setTimeout(() => intro.remove(), reduceMotion ? 170 : 420);
+  };
+
+  const beginTimer = () => window.setTimeout(dismissIntro, reduceMotion ? 120 : 1250);
+
+  if (document.readyState === "complete") beginTimer();
+  else window.addEventListener("load", beginTimer, { once: true });
+
+  window.setTimeout(dismissIntro, reduceMotion ? 350 : 2200);
+})();
