@@ -44,7 +44,7 @@ html.intro-open,html.intro-open body{overflow:hidden}body{margin:0}
       <a href="index.html" aria-current="page">Inicio</a>
       <a href="productos.html">Productos</a>
       <a href="trabajos.html">Nosotros</a>
-      <a href="contactanos.html" class="quote">Cotizar</a>
+      <a href="#cotizador" class="quote">Cotizar</a>
     </div>
   </nav>
 </header>
@@ -86,32 +86,149 @@ html.intro-open,html.intro-open body{overflow:hidden}body{margin:0}
     </div>
   </section>
 
+
+  <section class="section white" id="cotizador" aria-labelledby="titulo-cotizador">
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow">Cotización rápida</p><h2 id="titulo-cotizador">Cuéntanos qué necesitas</h2></div>
+        <p>Obtén un estimado para lona o prepara los datos de cualquier producto. Al finalizar se abrirá WhatsApp con toda la información.</p>
+      </div>
+      <div class="quote-layout">
+        <form class="panel quote-form" id="quote-form">
+          <div class="form-grid">
+            <label>Producto
+              <select id="quote-product" name="producto" required>
+                <option value="">Selecciona una opción</option>
+                <option value="lona">Lona — $120 por m²</option>
+                <option value="vinil">Vinil o rotulación</option>
+                <option value="papeleria">Papelería, tarjetas o copias</option>
+                <option value="personalizado">Playera, taza o personalizado</option>
+                <option value="otro">Otro producto</option>
+              </select>
+            </label>
+            <label>Cantidad
+              <input id="quote-quantity" name="cantidad" type="number" min="1" step="1" value="1" required>
+            </label>
+            <label class="dimension-field">Ancho en metros
+              <input id="quote-width" name="ancho" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="Ej. 2">
+            </label>
+            <label class="dimension-field">Alto en metros
+              <input id="quote-height" name="alto" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="Ej. 1">
+            </label>
+            <label>¿Ya tienes diseño?
+              <select id="quote-design" name="diseno" required>
+                <option value="">Selecciona</option>
+                <option value="Sí, tengo el diseño listo">Sí, tengo diseño listo</option>
+                <option value="No, necesito apoyo con el diseño">No, necesito diseño</option>
+              </select>
+            </label>
+            <label>¿Para cuándo lo necesitas?
+              <input id="quote-date" name="fecha" type="date">
+            </label>
+          </div>
+          <label>Detalles adicionales
+            <textarea id="quote-notes" name="detalles" rows="4" placeholder="Colores, acabado, uso del producto o cualquier indicación importante"></textarea>
+          </label>
+          <label>Archivo de referencia <small>(opcional)</small>
+            <input id="quote-file" name="archivo" type="file" accept=".pdf,.png,.jpg,.jpeg,.svg,.ai,.cdr">
+            <small class="field-note">El archivo no se envía automáticamente; WhatsApp se abrirá para que puedas adjuntarlo en el chat.</small>
+          </label>
+          <button class="btn whatsapp" type="submit">Enviar datos por WhatsApp</button>
+        </form>
+        <aside class="quote-summary" aria-live="polite">
+          <p class="eyebrow">Estimado</p>
+          <div class="estimate-price" id="quote-estimate">Selecciona un producto</div>
+          <p id="quote-detail">El precio final se confirma después de revisar materiales, archivos y dificultad del diseño.</p>
+          <ul class="checks">
+            <li>La lona se calcula a $120 por m².</li>
+            <li>El diseño se cotiza según su dificultad.</li>
+            <li>No se realiza ningún cobro desde esta página.</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
   <section class="section" aria-labelledby="proceso">
     <div class="wrap">
-      <div class="section-head"><div><p class="eyebrow">Proceso sencillo</p><h2 id="proceso">De tu idea al producto terminado</h2></div></div>
-      <div class="grid grid-4">
-        <article class="feature"><div class="feature-icon">1</div><h3>Cuéntanos tu proyecto</h3><p>Producto, medidas, cantidad y cuándo lo necesitas.</p></article>
-        <article class="feature"><div class="feature-icon">2</div><h3>Recibe orientación</h3><p>Te ayudamos a elegir material y acabado adecuados.</p></article>
-        <article class="feature"><div class="feature-icon">3</div><h3>Confirma tu pedido</h3><p>Revisamos los detalles antes de iniciar producción.</p></article>
-        <article class="feature"><div class="feature-icon">4</div><h3>Recoge tu trabajo</h3><p>Te avisamos cuando esté listo en nuestro local.</p></article>
+      <div class="section-head"><div><p class="eyebrow">Así trabajamos</p><h2 id="proceso">De tu idea al producto terminado</h2></div><p>Un proceso claro para revisar medidas, diseño, precio y producción antes de imprimir.</p></div>
+      <div class="process-steps">
+        <article class="step"><span>1</span><h3>Solicita</h3><p>Elige producto, medidas, cantidad y fecha.</p></article>
+        <article class="step"><span>2</span><h3>Comparte</h3><p>Envía tu diseño o una referencia por WhatsApp.</p></article>
+        <article class="step"><span>3</span><h3>Revisamos</h3><p>Confirmamos material, diseño y precio final.</p></article>
+        <article class="step"><span>4</span><h3>Apruebas</h3><p>Validas la muestra antes de producir.</p></article>
+        <article class="step"><span>5</span><h3>Entregamos</h3><p>Te avisamos cuando tu trabajo esté listo.</p></article>
       </div>
     </div>
   </section>
 
-  <section class="section white">
-    <div class="wrap split">
+
+  <section class="section white" aria-labelledby="archivos">
+    <div class="wrap">
+      <div class="section-head"><div><p class="eyebrow">Prepara tu archivo</p><h2 id="archivos">Guía para una impresión nítida</h2></div><p>Si no estás seguro de tu archivo, envíalo de todos modos. Lo revisaremos antes de producir.</p></div>
+      <div class="grid grid-4 file-guide">
+        <article class="feature"><div class="feature-icon">PDF</div><h3>Formato recomendado</h3><p>PDF es ideal. También aceptamos PNG y JPG de buena calidad.</p></article>
+        <article class="feature"><div class="feature-icon">300</div><h3>Buena resolución</h3><p>Para piezas pequeñas procura usar imágenes de 300 ppp.</p></article>
+        <article class="feature"><div class="feature-icon">1:1</div><h3>Medida correcta</h3><p>Indica el tamaño final o la escala usada en tu diseño.</p></article>
+        <article class="feature"><div class="feature-icon">✓</div><h3>Revisión previa</h3><p>No produzcas con dudas: revisamos contigo texto, medidas y calidad.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="faq">
+    <div class="wrap faq-layout">
+      <div><p class="eyebrow">Preguntas frecuentes</p><h2 id="faq">Resolvemos tus dudas</h2><p class="lead">Información rápida antes de solicitar tu cotización.</p></div>
+      <div class="faq-list">
+        <details><summary>¿Cuánto tarda un trabajo?</summary><p>Depende del producto, cantidad y carga de producción. Confirma tu fecha al solicitar la cotización.</p></details>
+        <details><summary>¿Pueden ayudarme con el diseño?</summary><p>Sí. El diseño se cotiza por separado según el tiempo y la dificultad del proyecto.</p></details>
+        <details><summary>¿Qué archivos aceptan?</summary><p>Principalmente PDF, PNG y JPG. También puedes consultar por archivos editables.</p></details>
+        <details><summary>¿El precio mostrado es definitivo?</summary><p>No. Los cálculos de la página son estimados; confirmamos el precio después de revisar medidas, materiales y diseño.</p></details>
+        <details><summary>¿Puedo enviar una referencia por WhatsApp?</summary><p>Sí. Puedes enviar fotografías, bocetos o ejemplos para explicarnos mejor tu idea.</p></details>
+        <details><summary>¿Realizan trabajos urgentes?</summary><p>Consúltanos la fecha antes de confirmar. Revisaremos si existe disponibilidad de producción.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section white" aria-labelledby="resena">
+    <div class="wrap review-layout">
+      <div><p class="eyebrow">Tu experiencia</p><h2 id="resena">Califica nuestro servicio</h2><p class="lead">Sólo necesitamos tu nombre y una calificación del 1 al 5. Al enviar se abrirá WhatsApp para hacérnosla llegar.</p></div>
+      <form class="panel review-form" id="review-form">
+        <label>Nombre
+          <input id="review-name" name="nombre" type="text" maxlength="60" autocomplete="name" required placeholder="Tu nombre">
+        </label>
+        <fieldset>
+          <legend>Calificación</legend>
+          <div class="stars" aria-label="Selecciona de una a cinco estrellas">
+            <input type="radio" id="star-1" name="estrellas" value="1" required><label for="star-1" data-value="1" aria-label="1 estrella">★</label>
+            <input type="radio" id="star-2" name="estrellas" value="2"><label for="star-2" data-value="2" aria-label="2 estrellas">★</label>
+            <input type="radio" id="star-3" name="estrellas" value="3"><label for="star-3" data-value="3" aria-label="3 estrellas">★</label>
+            <input type="radio" id="star-4" name="estrellas" value="4"><label for="star-4" data-value="4" aria-label="4 estrellas">★</label>
+            <input type="radio" id="star-5" name="estrellas" value="5"><label for="star-5" data-value="5" aria-label="5 estrellas">★</label>
+          </div>
+        </fieldset>
+        <button class="btn primary" type="submit">Enviar calificación</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ubicacion">
+    <div class="wrap visit-card">
       <img src="local.jpg" alt="Local de Impresiones Compás en Piedras Negras" loading="lazy">
-      <div><p class="eyebrow">Cerca de ti</p><h2>Impresión local con atención directa</h2><p class="lead">Estamos en Piedras Negras, Coahuila. Puedes visitarnos, llamarnos o enviar tu idea por WhatsApp.</p>
-        <ul class="checks"><li>Atención para personas y negocios</li><li>Variedad de materiales y acabados</li><li>Cotización directa y clara</li></ul>
-        <a class="btn primary" href="contactanos.html">Cómo contactarnos</a>
+      <div>
+        <p class="eyebrow">Visítanos</p><h2 id="ubicacion">C. Mar Muerto 923, Año 2000</h2>
+        <p class="lead">Piedras Negras, Coahuila. Abre la ubicación para iniciar la ruta desde tu teléfono.</p>
+        <div class="visit-data"><p><strong>Teléfono</strong><a href="tel:+528781280497">878 128 0497</a></p><p><strong>Horario</strong><a href="https://wa.me/5218781280497?text=Hola%2C%20%C2%BFme%20pueden%20confirmar%20su%20horario%20de%20hoy%3F" target="_blank" rel="noopener">Confirmar por WhatsApp</a></p></div>
+        <a class="btn primary" href="https://maps.app.goo.gl/ce7VM2Av23xhQuHv6" target="_blank" rel="noopener">Abrir en Google Maps</a>
       </div>
     </div>
   </section>
 
-  <section class="section"><div class="wrap"><div class="band"><div><h2>¿Listo para hacer realidad tu idea?</h2><p>Envíanos los datos de tu proyecto y comencemos tu cotización.</p></div><a class="btn whatsapp" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20solicitar%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener">Escribir por WhatsApp</a></div></div></section>
+
+  <section class="section"><div class="wrap"><div class="band"><div><h2>¿Listo para hacer realidad tu idea?</h2><p>Envíanos los datos de tu proyecto y comencemos tu cotización.</p></div><a class="btn whatsapp" href="#cotizador">Usar el cotizador</a></div></div></section>
 </main>
 <a class="float" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener" aria-label="Cotizar por WhatsApp">WA</a>
 <footer class="footer"><div class="wrap"><div class="footer-grid"><div><h3>Impresiones Compás</h3><p>Impresión, publicidad y personalizados en Piedras Negras, Coahuila.</p></div><div><h3>Explora</h3><div class="footer-links"><a href="productos.html">Productos</a><a href="trabajos.html">Nosotros</a><a href="contactanos.html">Contacto</a></div></div><div><h3>Visítanos</h3><p>C. Mar Muerto 923, Año 2000<br>Piedras Negras, Coah.</p><a href="tel:+528781280497">878 128 0497</a></div></div><div class="footer-bottom">© 2026 Impresiones Compás. Todos los derechos reservados.</div></div></footer>
   <script src="effects.js" defer></script>
+  <script src="quote-tools.js" defer></script>
 </body>
 </html>

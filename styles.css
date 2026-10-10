@@ -334,3 +334,48 @@ linear-gradient(145deg,#020814 0%,#071a30 52%,#092a46 100%);opacity:1;visibility
 @keyframes loadingDots{0%{content:""}25%{content:"."}50%{content:".."}75%,100%{content:"..."}}
 @media(max-width:650px){.site-intro:before{left:-18%}.site-intro:after{right:-18%}.site-intro:before,.site-intro:after{width:190px;opacity:.48}}
 @media(prefers-reduced-motion:reduce){.intro-logo,.site-intro:before,.site-intro:after,.intro-inner:before,.intro-loading:after{animation:none}.intro-loading:after{content:"..."}.site-intro{transition-duration:.15s}}
+
+/* Herramientas de cotización y contenido */
+.quote-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:start}
+.quote-form{display:grid;gap:20px}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+.quote-form label,.review-form label{display:grid;gap:7px;color:var(--ink);font-weight:800}
+.quote-form input,.quote-form select,.quote-form textarea,.review-form input{width:100%;padding:13px 14px;border:1px solid #afcddd;border-radius:12px;background:#fafdff;color:var(--ink);font:inherit;outline:none;transition:border-color .2s ease,box-shadow .2s ease}
+.quote-form input:focus,.quote-form select:focus,.quote-form textarea:focus,.review-form input:focus{border-color:#2789b3;box-shadow:0 0 0 4px rgba(53,169,199,.14)}
+.quote-form textarea{resize:vertical;min-height:110px}
+.field-note{display:block;color:var(--muted);font-weight:500;line-height:1.45}
+.dimension-field[hidden]{display:none}
+.quote-summary{position:sticky;top:106px;padding:32px;border-radius:28px;color:#fff;background:linear-gradient(145deg,#08243f,#1769b0 68%,#2789a6);box-shadow:0 22px 55px rgba(8,36,63,.24)}
+.quote-summary .eyebrow{color:#98e5f0}
+.quote-summary p{color:#d9f3f8}
+.quote-summary .checks li{color:#fff}
+.estimate-price{font-size:clamp(2rem,5vw,3.6rem);font-weight:950;line-height:1.05;margin:8px 0 16px}
+.process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}
+.step{position:relative;padding:24px 19px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.9);box-shadow:0 10px 28px rgba(18,59,91,.08)}
+.step span{display:grid;place-items:center;width:40px;height:40px;margin-bottom:15px;border-radius:50%;background:linear-gradient(135deg,#1769b0,#35a9c7);color:#fff;font-weight:950}
+.step p{margin:0;color:var(--muted)}
+.file-guide .feature-icon{width:auto;min-width:48px;padding-inline:10px;font-size:.9rem}
+.faq-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:55px;align-items:start}
+.faq-list{display:grid;gap:12px}
+.faq-list details{overflow:hidden;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.92);box-shadow:0 8px 22px rgba(18,59,91,.07)}
+.faq-list summary{padding:18px 20px;cursor:pointer;color:var(--ink);font-weight:900;list-style:none}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary:after{content:"+";float:right;color:#1769b0;font-size:1.3rem}
+.faq-list details[open] summary:after{content:"−"}
+.faq-list details p{margin:0;padding:0 20px 19px;color:var(--muted)}
+.review-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.review-form{display:grid;gap:20px}
+.review-form fieldset{margin:0;padding:0;border:0}
+.review-form legend{margin-bottom:8px;color:var(--ink);font-weight:900}
+.stars{display:flex;gap:7px}
+.stars input{position:absolute;opacity:0;pointer-events:none}
+.stars label{cursor:pointer;color:#a9becd;font-size:2.4rem;line-height:1;transition:color .18s ease,transform .18s ease}
+.stars label:hover,.stars label.is-selected{color:#f2b632;transform:translateY(-2px)}
+.visit-card{display:grid;grid-template-columns:1fr 1fr;gap:0;overflow:hidden;border-radius:30px;background:#fff;box-shadow:var(--shadow)}
+.visit-card>img{width:100%;height:100%;min-height:430px;object-fit:cover}
+.visit-card>div{padding:42px}
+.visit-data{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0}
+.visit-data p{display:grid;gap:4px;margin:0;padding:15px;border-radius:14px;background:#edf6fa}
+.visit-data a{color:#1769b0;font-weight:800;text-decoration:none}
+@media(max-width:900px){.quote-layout,.faq-layout,.review-layout,.visit-card{grid-template-columns:1fr}.process-steps{grid-template-columns:repeat(2,1fr)}.quote-summary{position:static}.visit-card>img{min-height:320px}}
+@media(max-width:650px){.form-grid,.visit-data,.process-steps{grid-template-columns:1fr}.quote-summary,.visit-card>div{padding:25px}.stars label{font-size:2.15rem}}
