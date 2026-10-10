@@ -44,7 +44,7 @@ html.intro-open,html.intro-open body{overflow:hidden}body{margin:0}
       <a href="index.html" aria-current="page">Inicio</a>
       <a href="productos.html">Productos</a>
       <a href="trabajos.html">Nosotros</a>
-      <a href="#cotizador" class="quote">Cotizar</a>
+      <a href="contactanos.html" class="quote">Cotizar</a>
     </div>
   </nav>
 </header>
@@ -87,67 +87,6 @@ html.intro-open,html.intro-open body{overflow:hidden}body{margin:0}
   </section>
 
 
-  <section class="section white" id="cotizador" aria-labelledby="titulo-cotizador">
-    <div class="wrap">
-      <div class="section-head">
-        <div><p class="eyebrow">Cotización rápida</p><h2 id="titulo-cotizador">Cuéntanos qué necesitas</h2></div>
-        <p>Obtén un estimado para lona o prepara los datos de cualquier producto. Al finalizar se abrirá WhatsApp con toda la información.</p>
-      </div>
-      <div class="quote-layout">
-        <form class="panel quote-form" id="quote-form">
-          <div class="form-grid">
-            <label>Producto
-              <select id="quote-product" name="producto" required>
-                <option value="">Selecciona una opción</option>
-                <option value="lona">Lona — $120 por m²</option>
-                <option value="vinil">Vinil o rotulación</option>
-                <option value="papeleria">Papelería, tarjetas o copias</option>
-                <option value="personalizado">Playera, taza o personalizado</option>
-                <option value="otro">Otro producto</option>
-              </select>
-            </label>
-            <label>Cantidad
-              <input id="quote-quantity" name="cantidad" type="number" min="1" step="1" value="1" required>
-            </label>
-            <label class="dimension-field">Ancho en metros
-              <input id="quote-width" name="ancho" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="Ej. 2">
-            </label>
-            <label class="dimension-field">Alto en metros
-              <input id="quote-height" name="alto" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="Ej. 1">
-            </label>
-            <label>¿Ya tienes diseño?
-              <select id="quote-design" name="diseno" required>
-                <option value="">Selecciona</option>
-                <option value="Sí, tengo el diseño listo">Sí, tengo diseño listo</option>
-                <option value="No, necesito apoyo con el diseño">No, necesito diseño</option>
-              </select>
-            </label>
-            <label>¿Para cuándo lo necesitas?
-              <input id="quote-date" name="fecha" type="date">
-            </label>
-          </div>
-          <label>Detalles adicionales
-            <textarea id="quote-notes" name="detalles" rows="4" placeholder="Colores, acabado, uso del producto o cualquier indicación importante"></textarea>
-          </label>
-          <label>Archivo de referencia <small>(opcional)</small>
-            <input id="quote-file" name="archivo" type="file" accept=".pdf,.png,.jpg,.jpeg,.svg,.ai,.cdr">
-            <small class="field-note">El archivo no se envía automáticamente; WhatsApp se abrirá para que puedas adjuntarlo en el chat.</small>
-          </label>
-          <button class="btn whatsapp" type="submit">Enviar datos por WhatsApp</button>
-        </form>
-        <aside class="quote-summary" aria-live="polite">
-          <p class="eyebrow">Estimado</p>
-          <div class="estimate-price" id="quote-estimate">Selecciona un producto</div>
-          <p id="quote-detail">El precio final se confirma después de revisar materiales, archivos y dificultad del diseño.</p>
-          <ul class="checks">
-            <li>La lona se calcula a $120 por m².</li>
-            <li>El diseño se cotiza según su dificultad.</li>
-            <li>No se realiza ningún cobro desde esta página.</li>
-          </ul>
-        </aside>
-      </div>
-    </div>
-  </section>
 
   <section class="section" aria-labelledby="proceso">
     <div class="wrap">
@@ -217,18 +156,18 @@ html.intro-open,html.intro-open body{overflow:hidden}body{margin:0}
       <div>
         <p class="eyebrow">Visítanos</p><h2 id="ubicacion">C. Mar Muerto 923, Año 2000</h2>
         <p class="lead">Piedras Negras, Coahuila. Abre la ubicación para iniciar la ruta desde tu teléfono.</p>
-        <div class="visit-data"><p><strong>Teléfono</strong><a href="tel:+528781280497">878 128 0497</a></p><p><strong>Horario</strong><a href="https://wa.me/5218781280497?text=Hola%2C%20%C2%BFme%20pueden%20confirmar%20su%20horario%20de%20hoy%3F" target="_blank" rel="noopener">Confirmar por WhatsApp</a></p></div>
+        <div class="visit-data"><p><strong>Teléfono</strong><a href="tel:+528781280497">878 128 0497</a></p><div class="hours-card"><strong>Horario</strong><ul class="hours-list"><li><span>Lunes a viernes</span><b>9:00–20:00</b></li><li><span>Sábado</span><b>9:00–19:00</b></li><li><span>Domingo</span><b>12:00–17:00</b></li></ul></div></div>
         <a class="btn primary" href="https://maps.app.goo.gl/ce7VM2Av23xhQuHv6" target="_blank" rel="noopener">Abrir en Google Maps</a>
       </div>
     </div>
   </section>
 
 
-  <section class="section"><div class="wrap"><div class="band"><div><h2>¿Listo para hacer realidad tu idea?</h2><p>Envíanos los datos de tu proyecto y comencemos tu cotización.</p></div><a class="btn whatsapp" href="#cotizador">Usar el cotizador</a></div></div></section>
+  <section class="section"><div class="wrap"><div class="band"><div><h2>¿Listo para hacer realidad tu idea?</h2><p>Envíanos los datos de tu proyecto y comencemos tu cotización.</p></div><a class="btn whatsapp" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20solicitar%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener">Escribir por WhatsApp</a></div></div></section>
 </main>
 <a class="float" href="https://wa.me/5218781280497?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener" aria-label="Cotizar por WhatsApp">WA</a>
 <footer class="footer"><div class="wrap"><div class="footer-grid"><div><h3>Impresiones Compás</h3><p>Impresión, publicidad y personalizados en Piedras Negras, Coahuila.</p></div><div><h3>Explora</h3><div class="footer-links"><a href="productos.html">Productos</a><a href="trabajos.html">Nosotros</a><a href="contactanos.html">Contacto</a></div></div><div><h3>Visítanos</h3><p>C. Mar Muerto 923, Año 2000<br>Piedras Negras, Coah.</p><a href="tel:+528781280497">878 128 0497</a></div></div><div class="footer-bottom">© 2026 Impresiones Compás. Todos los derechos reservados.</div></div></footer>
   <script src="effects.js" defer></script>
-  <script src="quote-tools.js" defer></script>
+  <script src="reviews.js" defer></script>
 </body>
 </html>
