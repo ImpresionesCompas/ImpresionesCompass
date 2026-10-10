@@ -121,16 +121,15 @@ html.intro-open,html.intro-open body{overflow:hidden}body{margin:0}
         <details><summary>¿Cuánto tarda un trabajo?</summary><p>Depende del producto, cantidad y carga de producción. Confirma tu fecha al solicitar la cotización.</p></details>
         <details><summary>¿Pueden ayudarme con el diseño?</summary><p>Sí. El diseño se cotiza por separado según el tiempo y la dificultad del proyecto.</p></details>
         <details><summary>¿Qué archivos aceptan?</summary><p>Principalmente PDF, PNG y JPG. También puedes consultar por archivos editables.</p></details>
-        <details><summary>¿El precio mostrado es definitivo?</summary><p>No. Los cálculos de la página son estimados; confirmamos el precio después de revisar medidas, materiales y diseño.</p></details>
         <details><summary>¿Puedo enviar una referencia por WhatsApp?</summary><p>Sí. Puedes enviar fotografías, bocetos o ejemplos para explicarnos mejor tu idea.</p></details>
-        <details><summary>¿Realizan trabajos urgentes?</summary><p>Consúltanos la fecha antes de confirmar. Revisaremos si existe disponibilidad de producción.</p></details>
+        <details><summary>¿Realizan trabajos urgentes?</summary><p>Sí. Contamos con servicio Express cuando existe disponibilidad; el costo del trabajo aumenta al doble.</p></details>
       </div>
     </div>
   </section>
 
   <section class="section white" aria-labelledby="resena">
     <div class="wrap review-layout">
-      <div><p class="eyebrow">Tu experiencia</p><h2 id="resena">Califica nuestro servicio</h2><p class="lead">Sólo necesitamos tu nombre y una calificación del 1 al 5. Al enviar se abrirá WhatsApp para hacérnosla llegar.</p></div>
+      <div><p class="eyebrow">Tu experiencia</p><h2 id="resena">Califica nuestro servicio</h2><p class="lead">Sólo necesitamos tu nombre y una calificación del 1 al 5. Tu valoración aparecerá debajo al agregarla.</p></div>
       <form class="panel review-form" id="review-form">
         <label>Nombre
           <input id="review-name" name="nombre" type="text" maxlength="60" autocomplete="name" required placeholder="Tu nombre">
@@ -145,8 +144,12 @@ html.intro-open,html.intro-open body{overflow:hidden}body{margin:0}
             <input type="radio" id="star-5" name="estrellas" value="5"><label for="star-5" data-value="5" aria-label="5 estrellas">★</label>
           </div>
         </fieldset>
-        <button class="btn primary" type="submit">Enviar calificación</button>
+        <button class="btn primary" type="submit">Agregar calificación</button>
       </form>
+    </div>
+    <div class="wrap reviews-board">
+      <div class="reviews-board-head"><div><p class="eyebrow">Calificaciones</p><h3>Opiniones agregadas</h3></div><p>Estas calificaciones se guardan únicamente en este navegador.</p></div>
+      <div class="reviews-list" id="reviews-list" aria-live="polite"></div>
     </div>
   </section>
 
@@ -156,7 +159,7 @@ html.intro-open,html.intro-open body{overflow:hidden}body{margin:0}
       <div>
         <p class="eyebrow">Visítanos</p><h2 id="ubicacion">C. Mar Muerto 923, Año 2000</h2>
         <p class="lead">Piedras Negras, Coahuila. Abre la ubicación para iniciar la ruta desde tu teléfono.</p>
-        <div class="visit-data"><p><strong>Teléfono</strong><a href="tel:+528781280497">878 128 0497</a></p><div class="hours-card"><strong>Horario</strong><ul class="hours-list"><li><span>Lunes a viernes</span><b>9:00–20:00</b></li><li><span>Sábado</span><b>9:00–19:00</b></li><li><span>Domingo</span><b>12:00–17:00</b></li></ul></div></div>
+        <div class="visit-data"><p><strong>Teléfono</strong><a href="tel:+528781280497">878 128 0497</a></p></div>
         <a class="btn primary" href="https://maps.app.goo.gl/ce7VM2Av23xhQuHv6" target="_blank" rel="noopener">Abrir en Google Maps</a>
       </div>
     </div>

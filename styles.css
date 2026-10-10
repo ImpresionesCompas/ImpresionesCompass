@@ -371,3 +371,21 @@ linear-gradient(145deg,#020814 0%,#071a30 52%,#092a46 100%);opacity:1;visibility
 .hours-list b{color:var(--ink);white-space:nowrap}
 @media(max-width:900px){.faq-layout,.review-layout,.visit-card{grid-template-columns:1fr}.process-steps{grid-template-columns:repeat(2,1fr)}.visit-card>img{min-height:320px}}
 @media(max-width:650px){.visit-data,.process-steps{grid-template-columns:1fr}.visit-card>div{padding:25px}.stars label{font-size:2.15rem}}
+
+
+/* Reseñas visibles y horarios */
+.reviews-board{margin-top:34px}
+.reviews-board-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:18px}
+.reviews-board-head h3{font-size:1.55rem;margin:0}
+.reviews-board-head p{max-width:470px;margin:0;color:var(--muted)}
+.reviews-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.review-card,.reviews-empty{margin:0;padding:20px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 9px 24px rgba(18,59,91,.08)}
+.review-card{display:grid;gap:8px}
+.review-stars{color:#f2b632;font-size:1.35rem;letter-spacing:.06em}
+.schedule-card{display:grid;grid-template-columns:.9fr 1.1fr;gap:42px;align-items:center;padding:38px;border:1px solid var(--line);border-radius:30px;background:#fff;box-shadow:var(--shadow)}
+.schedule-grid{display:grid;gap:12px}
+.schedule-grid>div{display:flex;justify-content:space-between;gap:18px;padding:17px 19px;border-radius:15px;background:#eaf4f9;color:var(--muted)}
+.schedule-grid strong{color:var(--navy);white-space:nowrap}
+.visit-data{grid-template-columns:1fr}
+@media(max-width:900px){.reviews-list{grid-template-columns:repeat(2,1fr)}.schedule-card{grid-template-columns:1fr}}
+@media(max-width:650px){.reviews-board-head{align-items:flex-start;flex-direction:column}.reviews-list{grid-template-columns:1fr}.schedule-card{padding:25px}.schedule-grid>div{align-items:flex-start;flex-direction:column;gap:4px}}
